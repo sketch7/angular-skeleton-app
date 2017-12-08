@@ -2,21 +2,10 @@
 @import "../vars-def";
 
 // $primary-color: $darkred;
-$primary-color: $haiti;
+// $primary-color: $haiti;
+$heading-color: $concrete;
 
 $navbar-text-color: $white;
 
 $navbar-active-text-color: $white;
 $navbar-active-bg-color: lighten($primary-color, 20%);
-
-// hero
-// ----------
-
-// search
-$hero-search-border-color: $mine-shaft-dark;
-
-$hero-search-text-color: $concrete;
-$hero-search-bg-color: $mine-shaft-dark;
-
-$hero-search-icon-bg-color: $mine-shaft;
-$hero-search-icon-text-color: $concrete;

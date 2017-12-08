@@ -1,6 +1,12 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top">
 	<a class="navbar-brand"
-	 routerLink="/">{{appTitle}}</a>
+	 routerLink="/">
+		{{appTitle}}
+		<span *ngIf="isDebug"
+		 class="app-version">
+			{{appVersion}}
+		</span>
+	</a>
 	<button class="navbar-toggler"
 	 type="button"
 	 data-toggle="collapse"
@@ -34,3 +40,4 @@
 			 type="submit">Search</button>
 		</form> -->
 	</div>
+</nav>

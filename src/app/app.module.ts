@@ -5,15 +5,16 @@ import { ServiceWorkerModule } from "@angular/service-worker";
 import { AppRoutingModule } from "./app-routing.module";
 
 import { environment } from "../environments/environment";
-import { CommandComponent } from "./command/command.component";
 import { AppComponent } from "./app.component";
-import { NavComponent } from "./nav/nav.component";
+import { AREAS_COMPONENTS } from "./areas/index";
+import { AppSharedModule } from "./shared/shared.module";
 
 @NgModule({
-	declarations: [AppComponent, CommandComponent, NavComponent],
+	declarations: [AppComponent, ...AREAS_COMPONENTS],
 	imports: [
 		BrowserModule.withServerTransition({ appId: "serverApp" }),
 		AppRoutingModule,
+		AppSharedModule,
 		ServiceWorkerModule.register("/ngsw-worker.js", { enabled: environment.production }),
 	],
 	providers: [],

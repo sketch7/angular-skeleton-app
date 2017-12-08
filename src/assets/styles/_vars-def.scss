@@ -4,16 +4,16 @@
 // colors
 // --------
 
-// main
-$body-text-color: $mine-shaft !default;
-
 // primary
-$primary-color: $haiti !default;
+$primary-color: $electric-violet !default;
+$primary-highlight-color: lighten($primary-color, 0%) !default;
+$primary-text-color: $electric-violet !default;
 $primary-light-color: lighten($primary-color, 10%) !default;
 $primary-lighter-color: lighten($primary-color, 20%) !default;
 
 // accent
 $accent-color: $cyprus !default;
+$accent-highlight-color: lighten($accent-color, 5%) !default;
 $accent-light-color: lighten($accent-color, 10%) !default;
 $accent-lighter-color: lighten($accent-color, 20%) !default;
 
@@ -39,21 +39,22 @@ $navbar-active-bg-hover-color: lighten($navbar-active-bg-color, 10%) !default;
 $navbar-brand-bg-hover-color: transparent !default;
 $navbar-brand-text-hover-color: darken($navbar-text-color, 10%) !default;
 
-// hero
-// ----------
-
-// search
-$hero-search-border-focus-color: lighten($primary-color, 50%) !default;
-$hero-search-border-color: $mine-shaft !default;
-
-$hero-search-text-color: $body-text-color !default;
-$hero-search-bg-color: $white !default;
-
-$hero-search-icon-text-color: $body-text-color !default;
-$hero-search-icon-bg-color: $concrete !default;
-
 // fonts
 // -----------
 
-$body-font-family: "Open Sans", "Helvetica Neue", "Arial", sans-serif;
+$link-color: $primary-color !default;
+$link-hover-color: $primary-highlight-color !default;
+$heading-color: $primary-color !default;
+$body-text-color: $concrete !default;
+$base-font-family: "Open Sans", "Helvetica Neue", "Arial", sans-serif;
 $heading-font-family: "Montserrat", "Helvetica Neue", "Arial", sans-serif;
+$base-font-size: 16px !default;
+$font-size-xxs: 0.65em !default;
+$font-size-xs: 0.75em !default;
+$font-size-s: 0.8em !default;
+$font-size-l: 2.25em !default;
+$font-size-xl: 3em !default;
+$font-size-xxl: 3.5em !default;
+
+$text-accent-color: $accent-color !default;
+$text-diffuse-color: $dusty-gray !default;
