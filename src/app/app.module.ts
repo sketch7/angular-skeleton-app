@@ -6,17 +6,10 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { CommandComponent } from "./command/command.component";
 
-
 @NgModule({
-	declarations: [
-		AppComponent,
-		CommandComponent
-	],
-	imports: [
-		BrowserModule,
-		AppRoutingModule
-	],
+	declarations: [AppComponent, CommandComponent],
+	imports: [BrowserModule.withServerTransition({ appId: "serverApp" }), AppRoutingModule],
 	providers: [],
-	bootstrap: [AppComponent]
+	bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
