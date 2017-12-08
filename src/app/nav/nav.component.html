@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 	<a class="navbar-brand"
-	routerLink="/">{{appTitle}}</a>
+	 routerLink="/">{{appTitle}}</a>
 	<button class="navbar-toggler"
 	 type="button"
 	 data-toggle="collapse"
@@ -14,10 +14,14 @@
 	<div class="collapse navbar-collapse"
 	 id="navbarsExampleDefault">
 		<ul class="navbar-nav mr-auto">
-			<li *ngFor="let link of links" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="link.activeOptions || {exact: false}">
+			<li *ngFor="let link of links"
+			 class="nav-item"
+			 routerLinkActive="active"
+			 [routerLinkActiveOptions]="link.activeOptions || {exact: false}">
 				<a class="nav-link"
-				[routerLink]="link.path">{{link.title}}
-				<!-- <span class="sr-only">(current)</span> -->
+				 [routerLink]="link.path">
+					{{link.title}}
+					<!-- <span class="sr-only">(current)</span> -->
 				</a>
 			</li>
 		</ul>

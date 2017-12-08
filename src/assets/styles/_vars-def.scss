@@ -1,3 +1,4 @@
+/* define variables with defaults */
 @import "colors";
 
 // colors
@@ -11,19 +12,18 @@ $primary-color: $haiti !default;
 $primary-light-color: lighten($primary-color, 10%) !default;
 $primary-lighter-color: lighten($primary-color, 20%) !default;
 
-// secondary
-$secondary-color: $cyprus !default;
-$secondary-light-color: lighten($secondary-color, 10%) !default;
-$secondary-lighter-color: lighten($secondary-color, 20%) !default;
+// accent
+$accent-color: $cyprus !default;
+$accent-light-color: lighten($accent-color, 10%) !default;
+$accent-lighter-color: lighten($accent-color, 20%) !default;
 
 // states
 $error-color: $darkred !default;
 
 // backgrounds
 $primary-bg-color: $mine-shaft-dark !default;
+// $accent-bg-color: $mine-shaft !default;
 $bg-overlay-color: $concrete !default;
-
-$secondary-bg-color: $mine-shaft !default;
 
 // splash
 // $splash-bg-color: #efecca;
