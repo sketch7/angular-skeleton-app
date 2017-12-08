@@ -1,0 +1,59 @@
+@import "colors";
+
+// colors
+// --------
+
+// main
+$body-text-color: $mine-shaft !default;
+
+// primary
+$primary-color: $haiti !default;
+$primary-light-color: lighten($primary-color, 10%) !default;
+$primary-lighter-color: lighten($primary-color, 20%) !default;
+
+// secondary
+$secondary-color: $cyprus !default;
+$secondary-light-color: lighten($secondary-color, 10%) !default;
+$secondary-lighter-color: lighten($secondary-color, 20%) !default;
+
+// states
+$error-color: $darkred !default;
+
+// backgrounds
+$primary-bg-color: $mine-shaft-dark !default;
+$bg-overlay-color: $concrete !default;
+
+$secondary-bg-color: $mine-shaft !default;
+
+// splash
+// $splash-bg-color: #efecca;
+$splash-bg-color: lighten($primary-color, 85%) !default;
+$splash-loader-color: $primary-light-color !default;
+
+// navbar
+$navbar-text-color: $white !default;
+$navbar-bg-color: $primary-bg-color !default;
+$navbar-active-text-color: $white !default;
+$navbar-active-bg-color: $primary-color !default;
+$navbar-active-bg-hover-color: lighten($navbar-active-bg-color, 10%) !default;
+$navbar-brand-bg-hover-color: transparent !default;
+$navbar-brand-text-hover-color: darken($navbar-text-color, 10%) !default;
+
+// hero
+// ----------
+
+// search
+$hero-search-border-focus-color: lighten($primary-color, 50%) !default;
+$hero-search-border-color: $mine-shaft !default;
+
+$hero-search-text-color: $body-text-color !default;
+$hero-search-bg-color: $white !default;
+
+$hero-search-icon-text-color: $body-text-color !default;
+$hero-search-icon-bg-color: $concrete !default;
+
+// fonts
+// -----------
+
+$body-font-family: "Open Sans", "Helvetica Neue", "Arial", sans-serif;
+$heading-font-family: "Montserrat", "Helvetica Neue", "Arial", sans-serif;

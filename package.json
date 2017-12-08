@@ -26,7 +26,9 @@
 		"@angular/router": "^5.0.0",
 		"@angular/service-worker": "^5.0.0",
 		"@ssv/tools": "^0.6.12",
+		"bootstrap": "^4.0.0-beta.2",
 		"core-js": "^2.4.1",
+		"font-awesome": "^4.7.0",
 		"rxjs": "^5.5.2",
 		"zone.js": "^0.8.14"
 	},

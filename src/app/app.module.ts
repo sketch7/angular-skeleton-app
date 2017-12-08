@@ -7,9 +7,10 @@ import { AppRoutingModule } from "./app-routing.module";
 import { environment } from "../environments/environment";
 import { CommandComponent } from "./command/command.component";
 import { AppComponent } from "./app.component";
+import { NavComponent } from "./nav/nav.component";
 
 @NgModule({
-	declarations: [AppComponent, CommandComponent],
+	declarations: [AppComponent, CommandComponent, NavComponent],
 	imports: [
 		BrowserModule.withServerTransition({ appId: "serverApp" }),
 		AppRoutingModule,

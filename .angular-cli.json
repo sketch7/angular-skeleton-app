@@ -22,6 +22,11 @@
       "styles": [
         "styles.scss"
       ],
+      "stylePreprocessorOptions": {
+        "includePaths": [
+          "./assets/styles"
+        ]
+      },
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
@@ -83,6 +88,7 @@
   "defaults": {
     "styleExt": "scss",
     "component": {
+      "spec": false
     }
   }
 }
