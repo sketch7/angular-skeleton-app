@@ -1,5 +1,23 @@
-# angular labs
-experimental project for angular.
+# Angular Labs
+Angular 5.x navigation skeleton project with styling which get you started faster.
+
+## What does it have?
+ - Angular CLI 1.6 template
+ - SCSS for styling
+ - Bootstrap 4.x and font awesome
+ - Navigation/layout
+ - Theming
+
+# Getting Started
+
+## Start developing
+
+Run `npm start` to start developing.
+
+## Build and run production
+
+Run `npm run start:prod` build and run for production.
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.0.
 

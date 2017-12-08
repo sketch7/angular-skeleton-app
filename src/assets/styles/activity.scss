@@ -262,14 +262,3 @@ i {
 		height: 18px;
 	}
 }
-
-button {
-	&.executing {
-		// do something...
-		background: red;
-	}
-
-	&.is-busy {
-		background: blue;
-	}
-}
