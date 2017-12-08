@@ -6,15 +6,22 @@
     "node_modules/codelyzer"
   ],
   "rules": {
+    "import-blacklist": [
+      true,
+      "rxjs",
+      "rxjs/Rx"
+    ],
+    "directive-selector": [
+      true,
+      "attribute",
+      "app",
+      "camelCase"
+    ],
     "component-selector": [
       true,
       "element",
       "app",
       "kebab-case"
-    ],
-    "angular-whitespace": [
-      true,
-      "check-interpolation"
     ],
     "no-output-on-prefix": true,
     "use-input-property-decorator": true,
