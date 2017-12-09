@@ -1,7 +1,7 @@
 {
   "index": "/index.html",
   "assetGroups": [{
-    "name": "angular-labs",
+    "name": "angular-skeleton-app",
     "installMode": "prefetch",
     "resources": {
       "files": [

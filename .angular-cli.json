@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "angular-labs"
+    "name": "angular-skeleton-app"
   },
   "apps": [
     {
@@ -35,7 +35,7 @@
       }
     },
     {
-      "name": "angular-labs",
+      "name": "angular-skeleton-app",
       "root": "src",
       "outDir": "dist-server/",
       "assets": [

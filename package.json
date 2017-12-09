@@ -1,5 +1,5 @@
 {
-	"name": "angular-labs",
+	"name": "angular-skeleton-app",
 	"version": "0.0.0",
 	"license": "MIT",
 	"scripts": {
@@ -13,7 +13,7 @@
 		"e2e": "ng e2e",
 		"serve:prod": "cd ./dist && http-server",
 		"clean": "rimraf dist",
-		"regenerate": "ng new angular-labs --style scss --routing --service-worker"
+		"regenerate": "ng new angular-skeleton-app --style scss --routing --service-worker"
 	},
 	"private": true,
 	"dependencies": {

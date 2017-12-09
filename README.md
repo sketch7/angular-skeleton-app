@@ -1,4 +1,4 @@
-# Angular Labs
+# Angular Skeleton App
 Angular 5.x navigation skeleton project with styling which get you started faster.
 
 ## What does it have?
@@ -8,8 +8,10 @@ Angular 5.x navigation skeleton project with styling which get you started faste
  - Navigation/layout
  - Theming
 
+ ![Angular Skeleton App](./screenshot.png)
+
  ## todo
-  - SSR
+  - SSR server
   - docker image
 
 # Getting Started
@@ -22,6 +24,8 @@ Run `npm start` to start developing.
 
 Run `npm run start:prod` build and run for production.
 
+
+# Angular CLI
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.0.
 
