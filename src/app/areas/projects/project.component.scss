@@ -17,6 +17,7 @@ $project-description-color: $text-semi-diffuse-color !default;
 	&:hover {
 		.project {
 			&-container {
+				transition: 0.2s ease-in-out;
 				@include shadow-6dp;
 			}
 
@@ -25,6 +26,7 @@ $project-description-color: $text-semi-diffuse-color !default;
 			}
 
 			&-icon {
+				transition: 0.2s ease-in-out;
 				color: $project-icon-hover-color;
 			}
 		}
@@ -65,7 +67,7 @@ $project-description-color: $text-semi-diffuse-color !default;
 		top: 0.25em;
 
 		&--csharp {
-			background: $eucalyptus;
+			background: $electric-violet;
 		}
 
 		&--angular {
@@ -78,7 +80,7 @@ $project-description-color: $text-semi-diffuse-color !default;
 
 		&--javascript {
 			color: $black;
-			background: #ffc107;
+			background: $amber;
 		}
 	}
 }

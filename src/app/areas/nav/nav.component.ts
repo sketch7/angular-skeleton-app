@@ -11,7 +11,6 @@ export class NavComponent {
 	links = [
 		// { path: ["/"], title: "Home", activeOptions: { exact: true } },
 		{ path: ["/projects"], title: "Projects" },
-		{ path: ["/heroes"], title: "Heroes" },
 	];
 
 	appTitle = this.appInfo.title;
