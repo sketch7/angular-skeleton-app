@@ -8,6 +8,10 @@ Angular 5.x navigation skeleton project with styling which get you started faste
  - Navigation/layout
  - Theming
 
+ ## todo
+  - SSR
+  - docker image
+
 # Getting Started
 
 ## Start developing

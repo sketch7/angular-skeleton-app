@@ -10,7 +10,7 @@ import { AppInfoService } from "../../shared";
 export class NavComponent {
 	links = [
 		// { path: ["/"], title: "Home", activeOptions: { exact: true } },
-		{ path: ["/command"], title: "Command" },
+		{ path: ["/projects"], title: "Projects" },
 		{ path: ["/heroes"], title: "Heroes" },
 	];
 

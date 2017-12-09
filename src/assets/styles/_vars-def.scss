@@ -30,20 +30,11 @@ $bg-overlay-color: $concrete !default;
 $splash-bg-color: lighten($primary-color, 85%) !default;
 $splash-loader-color: $primary-light-color !default;
 
-// navbar
-$navbar-text-color: $white !default;
-$navbar-bg-color: $primary-bg-color !default;
-$navbar-active-text-color: $white !default;
-$navbar-active-bg-color: $primary-color !default;
-$navbar-active-bg-hover-color: lighten($navbar-active-bg-color, 10%) !default;
-$navbar-brand-bg-hover-color: transparent !default;
-$navbar-brand-text-hover-color: darken($navbar-text-color, 10%) !default;
-
 // fonts
 // -----------
 
-$link-color: $primary-color !default;
-$link-hover-color: $primary-highlight-color !default;
+$link-color: null !default;
+$link-hover-color: null !default;
 $heading-color: $primary-color !default;
 $body-text-color: $concrete !default;
 $base-font-family: "Open Sans", "Helvetica Neue", "Arial", sans-serif;
@@ -52,9 +43,11 @@ $base-font-size: 16px !default;
 $font-size-xxs: 0.65em !default;
 $font-size-xs: 0.75em !default;
 $font-size-s: 0.8em !default;
+$font-size-m: 1em !default;
 $font-size-l: 2.25em !default;
 $font-size-xl: 3em !default;
 $font-size-xxl: 3.5em !default;
 
 $text-accent-color: $accent-color !default;
 $text-diffuse-color: $dusty-gray !default;
+$text-semi-diffuse-color: $alto !default;

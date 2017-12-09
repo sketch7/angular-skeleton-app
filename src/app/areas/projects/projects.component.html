@@ -1,0 +1,15 @@
+<h1>Projects</h1>
+<p>Open source projects developed by sketch7.</p>
+
+<ul class="projects-container">
+	<li *ngFor="let project of projects">
+
+		<a target="_blank"
+		 rel="noopener"
+		 [title]="project.title"
+		 [href]="project.url">
+			<app-project [project]="project"></app-project>
+		</a>
+
+	</li>
+</ul>

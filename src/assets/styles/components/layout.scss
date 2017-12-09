@@ -2,6 +2,7 @@
 
 $footer-text-color: $text-diffuse-color !default;
 $footer-bg-color: rgba($cod-gray, 0.8) !default;
+$footer-icon-color: $crimson !default;
 
 html {
 	background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), no-repeat center center url("/assets/imgs/app-bg.min.jpg");
@@ -26,6 +27,10 @@ footer {
 	color: $footer-text-color;
 	background: $footer-bg-color;
 
+	.fa-heart {
+		color: $footer-icon-color;
+	}
+
 	> .container {
 		padding: 0 15px;
 
@@ -33,5 +38,11 @@ footer {
 			text-align: center;
 			margin: 20px 0;
 		}
+	}
+}
+
+@media (min-width: 2560px) {
+	.container {
+		max-width: 1840px;
 	}
 }

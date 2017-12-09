@@ -1,5 +1,6 @@
 [*]
 indent_style = tab
+indent_size = 4
 
 [*.{js,ts}]
 charset = utf-8
