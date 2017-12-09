@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top">
+<nav #menu class="navbar navbar-expand-md navbar-dark fixed-top">
 	<a class="navbar-brand"
 	 routerLink="/">
 		{{appTitle}}
@@ -7,18 +7,20 @@
 			{{appVersion}}
 		</span>
 	</a>
-	<button class="navbar-toggler"
+	<button #collapser
+	 class="navbar-toggler"
 	 type="button"
-	 data-toggle="collapse"
-	 data-target="#navbarsExampleDefault"
-	 aria-controls="navbarsExampleDefault"
-	 aria-expanded="false"
-	 aria-label="Toggle navigation">
+	 aria-controls="mainNavBar"
+	 [attr.aria-expanded]="isMenuOpened"
+	 aria-label="Toggle navigation"
+	 (click)="isMenuOpened = !isMenuOpened">
 		<span class="navbar-toggler-icon"></span>
 	</button>
 
-	<div class="collapse navbar-collapse"
-	 id="navbarsExampleDefault">
+	<div 
+	 class="collapse navbar-collapse"
+	 [ngClass]="{'show': isMenuOpened}"
+	 id="mainNavBar">
 		<ul class="navbar-nav mr-auto">
 			<li *ngFor="let link of links"
 			 class="nav-item"

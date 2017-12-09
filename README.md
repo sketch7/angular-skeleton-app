@@ -4,11 +4,12 @@ Angular 5.x navigation skeleton project with styling which get you started faste
 ## What does it have?
  - Angular CLI 1.6 template
  - SCSS for styling
- - Bootstrap 4.x and font awesome
+ - Font Awesome and Bootstrap 4.x (no javascript, just styles)
  - Navigation/layout
  - Theming
 
  ## todo
+  - fix footer to use flexbox
   - SSR
   - docker image
 
