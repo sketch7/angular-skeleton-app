@@ -10,9 +10,9 @@
 		"build:prod": "ng build --prod",
 		"test": "ng test",
 		"lint": "ng lint",
-    "e2e": "ng e2e",
-    "serve:prod": "cd ./dist && http-server",
-    "clean": "rimraf dist",
+		"e2e": "ng e2e",
+		"serve:prod": "cd ./dist && http-server",
+		"clean": "rimraf dist",
 		"regenerate": "ng new angular-labs --style scss --routing --service-worker"
 	},
 	"private": true,

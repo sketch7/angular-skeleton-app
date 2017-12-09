@@ -26,8 +26,33 @@ $project-description-color: $text-semi-diffuse-color !default;
 			}
 
 			&-icon {
-				transition: 0.2s ease-in-out;
-				color: $project-icon-hover-color;
+				transition: 0.3s ease-in-out;
+			}
+
+			&-tag {
+				&--csharp {
+					.project-icon {
+						color: $electric-violet;
+					}
+				}
+
+				&--angular {
+					.project-icon {
+						color: $crimson;
+					}
+				}
+
+				&--aurelia {
+					.project-icon {
+						color: $cerise;
+					}
+				}
+
+				&--javascript {
+					.project-icon {
+						color: $amber;
+					}
+				}
 			}
 		}
 	}
@@ -67,20 +92,28 @@ $project-description-color: $text-semi-diffuse-color !default;
 		top: 0.25em;
 
 		&--csharp {
-			background: $electric-violet;
+			.project-tag {
+				background: $electric-violet;
+			}
 		}
 
 		&--angular {
-			background: $crimson;
+			.project-tag {
+				background: $crimson;
+			}
 		}
 
 		&--aurelia {
-			background: $cerise;
+			.project-tag {
+				background: $cerise;
+			}
 		}
 
 		&--javascript {
-			color: $black;
-			background: $amber;
+			.project-tag {
+				color: $black;
+				background: $amber;
+			}
 		}
 	}
 }
