@@ -9,7 +9,6 @@ Angular 5.x navigation skeleton project with styling which get you started faste
  - Theming
 
  ## todo
-  - fix footer to use flexbox
   - SSR
   - docker image
 
