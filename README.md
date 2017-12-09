@@ -8,7 +8,7 @@ Angular 5.x navigation skeleton project with styling which get you started faste
  - Navigation/layout
  - Theming
 
- ![Angular Skeleton App](./screenshot.png)
+ ![Angular Skeleton App](./screenshot.jpg)
 
  ## todo
   - SSR server
