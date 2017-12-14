@@ -3,15 +3,10 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "@angular/*": [
-        "../node_modules/@angular/*"
-      ],
-      "rxjs/*": [
-        "../node_modules/rxjs/*"
-      ],
-      "@odin/*": [
-        "../node_modules/@ssv/*"
-      ]
+      "@angular/*": ["../node_modules/@angular/*"],
+      "rxjs/*": ["../node_modules/rxjs/*"],
+      // "@ssv/ngx.command": ["../node_modules/@ssv/ngx.command/src/index.ts"]
+      "@ssv/ngx.command": ["../../ssv-ng2-command/src/index.ts"]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
@@ -23,12 +18,7 @@
     "noUnusedParameters": true,
     "strict": true,
     "target": "es5",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2017",
-      "dom"
-    ]
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"]
   }
 }

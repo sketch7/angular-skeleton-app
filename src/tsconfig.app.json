@@ -1,6 +1,16 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
+    "paths": {
+      "@angular/*": [
+        "../node_modules/@angular/*"
+      ],
+      "rxjs/*": [
+        "../node_modules/rxjs/*"
+      ],
+      // "@ssv/ngx.command": ["../node_modules/@ssv/ngx.command/src/index.ts"]
+      "@ssv/ngx.command": ["../../ssv-ng2-command/src/index.ts"]
+    },
     "outDir": "../out-tsc/app",
     "baseUrl": "./",
     "module": "es2015",
@@ -9,5 +19,11 @@
   "exclude": [
     "test.ts",
     "**/*.spec.ts"
+  ],
+  "include": [
+    "./main.ts",
+    "./polyfills.ts",
+    "../../ssv-ng2-command/src/index.ts"
+    // "../node_modules/@ssv/ngx.command/src/index.ts"
   ]
 }
