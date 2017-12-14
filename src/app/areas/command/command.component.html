@@ -1,0 +1,89 @@
+<h1>Command</h1>
+<p>Experimental area to test out command pattern.</p>
+<div>
+	<fieldset>
+		<legend>Vanilla</legend>
+		<div class="btn-group"
+		 role="group">
+			<button class="btn btn-sm"
+			 type="button"
+			 [ngClass]="{'btn-success': !isValid, 'btn-danger': isValid}"
+			 (click)="toggleValidity()">
+				Mark as {{ isValid ? "Invalid" : "Valid" }}
+			</button>
+		</div>
+		<div class="form-group">
+			<div>
+				<small>
+					<span class="type variable">isValid</span>
+					<span class="type boolean value">{{isValid}}</span>
+				</small>
+			</div>
+			<div>
+				<small>
+					<span class="type variable">isExecuting</span>
+					<span class="type boolean value">{{isExecuting}}</span>
+				</small>
+			</div>
+		</div>
+		<div class="button-group">
+			<button class="btn btn-primary"
+			 type="button"
+			 [disabled]="!isValid || isExecuting"
+			 (click)="save()">
+				Save
+				<small>execute</small>
+			</button>
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend>Using Command</legend>
+		<div class="btn-group"
+		 role="group">
+			<button class="btn btn-sm"
+			 type="button"
+			 [ngClass]="{'btn-success': !isValid$.value, 'btn-danger': isValid$.value}"
+			 (click)="toggleValidity$()">
+				Mark as {{ (isValid$ | async) ? "Invalid" : "Valid" }}
+			</button>
+		</div>
+		<div class="form-group">
+			<div>
+				<small>
+					<span class="type variable">isValid</span>
+					<span class="type boolean value">{{isValid$ | async}}</span>
+				</small>
+			</div>
+			<div>
+				<small>
+					<span class="type variable">saveCmd.isExecuting</span>
+					<span class="type boolean value">{{saveCmd.isExecuting}}</span>
+				</small>
+			</div>
+			<div>
+				<small>
+					<span class="type variable">saveCmd.canExecute</span>
+					<span class="type boolean value">{{saveCmd.canExecute}}</span>
+				</small>
+			</div>
+		</div>
+		<div class="button-group">
+			<button class="btn btn-primary"
+			 type="button"
+			 [disabled]="!saveCmd.canExecute"
+			 (click)="saveCmd.execute()">
+				Save
+				<small>execute</small>
+			</button>
+
+			<button class="btn btn-primary"
+			 type="button"
+			 [command]="saveCmd">
+				<i *ngIf="saveCmd.isExecuting"
+				 class="ai-circled ai-indicator ai-dark-spin small"></i>
+				Save cmd
+				<small>execute</small>
+			</button>
+		</div>
+	</fieldset>
+</div>

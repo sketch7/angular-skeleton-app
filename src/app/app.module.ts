@@ -1,6 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { ServiceWorkerModule } from "@angular/service-worker";
+import { CommandModule } from "@ssv/ngx.command";
 
 import { AppRoutingModule } from "./app-routing.module";
 
@@ -15,6 +16,7 @@ import { AppSharedModule } from "./shared/shared.module";
 		BrowserModule.withServerTransition({ appId: "serverApp" }),
 		AppRoutingModule,
 		AppSharedModule,
+		CommandModule,
 		ServiceWorkerModule.register("/ngsw-worker.js", { enabled: environment.production }),
 	],
 	providers: [],
