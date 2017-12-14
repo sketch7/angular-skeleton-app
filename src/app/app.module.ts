@@ -10,13 +10,18 @@ import { AppComponent } from "./app.component";
 import { AREAS_COMPONENTS } from "./areas/index";
 import { AppSharedModule } from "./shared/shared.module";
 
+// const commandConfig: CommandOptions = {
+// 	executingCssClass: "is-busy",
+// };
+
 @NgModule({
 	declarations: [AppComponent, ...AREAS_COMPONENTS],
 	imports: [
 		BrowserModule.withServerTransition({ appId: "serverApp" }),
 		AppRoutingModule,
 		AppSharedModule,
-		CommandModule,
+		// CommandModule.forRoot(commandConfig),
+		CommandModule.forRoot(),
 		ServiceWorkerModule.register("/ngsw-worker.js", { enabled: environment.production }),
 	],
 	providers: [],

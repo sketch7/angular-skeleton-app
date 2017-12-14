@@ -1,6 +1,11 @@
 <h1>Command</h1>
-<p>Experimental area to test out command pattern.</p>
-<div>
+<p>Experimental area to test out
+	<a href="https://github.com/sketch7/ngx.command"
+	 target="_blank"
+	 rel="noopener">
+		<strong>@ssv/ngx.command</strong></a>.
+</p>
+<div class="container">
 	<fieldset>
 		<legend>Vanilla</legend>
 		<div class="btn-group"
@@ -81,8 +86,18 @@
 			 [command]="saveCmd">
 				<i *ngIf="saveCmd.isExecuting"
 				 class="ai-circled ai-indicator ai-dark-spin small"></i>
-				Save cmd
-				<small>execute</small>
+				Save
+				<small>with [command]</small>
+			</button>
+
+			<button class="btn btn-primary"
+			 type="button"
+			 [command]="saveCmd"
+			 [commandOptions]="{executingCssClass: 'is-loading'}">
+				<i *ngIf="saveCmd.isExecuting"
+				 class="ai-circled ai-indicator ai-dark-spin small"></i>
+				Save
+				<small>with [command] + [commandOptions]</small>
 			</button>
 		</div>
 	</fieldset>

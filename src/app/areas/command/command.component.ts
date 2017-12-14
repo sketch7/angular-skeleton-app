@@ -10,17 +10,16 @@ import { ICommand, Command } from "@ssv/ngx.command";
 	styleUrls: ["./command.component.scss"],
 })
 export class CommandComponent {
-	isValid = false;
+	isValid = true;
 	isExecuting = false;
 
-	isValid$ = new BehaviorSubject(false);
+	isValid$ = new BehaviorSubject(true);
 
 	saveCmd: ICommand = new Command(this.save$.bind(this), this.isValid$, true);
 	// saveCmd: ICommand = new Command(this.save$.bind(this), null, true);
 
 	save() {
 		this.isExecuting = true;
-		this.saveCmd.isExecuting = true;
 		setTimeout(() => {
 			this.isExecuting = false;
 			console.warn("save", "execute complete");
