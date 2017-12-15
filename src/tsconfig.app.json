@@ -9,7 +9,7 @@
         "../node_modules/rxjs/*"
       ],
       // "@ssv/ngx.command": ["../node_modules/@ssv/ngx.command/src/index.ts"]
-      "@ssv/ngx.command": ["../../ssv-ng2-command/src/index.ts"]
+      "@ssv/ngx.command": ["../../@ssv.ngx.command/src/index.ts"]
     },
     "outDir": "../out-tsc/app",
     "baseUrl": "./",
@@ -21,9 +21,8 @@
     "**/*.spec.ts"
   ],
   "include": [
-    "./main.ts",
-    "./polyfills.ts",
-    "../../ssv-ng2-command/src/index.ts"
+    "./**/*.ts",
+    "../../@ssv.ngx.command/src/index.ts"
     // "../node_modules/@ssv/ngx.command/src/index.ts"
   ]
 }
