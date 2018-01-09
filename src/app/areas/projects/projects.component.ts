@@ -1,12 +1,15 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
+import { LoggingFactory, ViewportService } from "@odin/ngx.core";
 import { Project } from "./projects.model";
+import { ISubscription } from "rxjs/Subscription";
+import { tap } from "rxjs/operators";
 
 @Component({
 	selector: "app-projects",
 	templateUrl: "./projects.component.html",
 	styleUrls: ["./projects.component.scss"],
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsComponent implements OnInit, OnDestroy {
 	projects: Project[] = [
 		// js
 		{
@@ -74,7 +77,23 @@ export class ProjectsComponent implements OnInit {
 		},
 	];
 
-	constructor() {}
+	private resize$$: ISubscription;
 
-	ngOnInit() {}
+	constructor(
+		loggerFactory: LoggingFactory,
+		private viewport: ViewportService,
+	) {
+		const logger = loggerFactory.get("projects");
+		logger.info("ctor");
+	}
+
+	ngOnInit() {
+		this.resize$$ = this.viewport.resize$.pipe(
+			tap(x => console.warn(">>> USAGE: viewport page resize triggered!", x))
+		).subscribe();
+	}
+
+	ngOnDestroy() {
+		this.resize$$.unsubscribe();
+	}
 }
