@@ -78,6 +78,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 	];
 
 	private resize$$: ISubscription;
+	private viewportSize$$: ISubscription;
 
 	constructor(
 		loggerFactory: LoggingFactory,
@@ -91,9 +92,14 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 		this.resize$$ = this.viewport.resize$.pipe(
 			tap(x => console.warn(">>> USAGE: viewport page resize triggered!", x))
 		).subscribe();
+
+		this.viewportSize$$ = this.viewport.sizeType$.pipe(
+			tap(x => console.warn(">>> USAGE: viewport size type changed!", x))
+		).subscribe();
 	}
 
 	ngOnDestroy() {
 		this.resize$$.unsubscribe();
+		this.viewportSize$$.unsubscribe();
 	}
 }
