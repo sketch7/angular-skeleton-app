@@ -1,0 +1,22 @@
+<h1>Heroes</h1>
+
+<div class="btn-group"
+ role="group"
+ aria-label="Basic example">
+	<button (click)="refresh()"
+	 type="button"
+	 class="btn btn-secondary">Refresh</button>
+	<button (click)="resetStore()"
+	 type="button"
+	 class="btn btn-danger">Reset store</button>
+</div>
+
+<ul>
+	<li *ngFor="let hero of heroes">
+		{{hero.name}}
+		<span class="badge"
+		 [ngClass]="{'badge-danger': hero.health <= 15, 'badge-warning': hero.health < 30, 'badge-success': hero.health >= 30}">({{hero.health}}%)</span>
+		<span class="badge badge-primary">{{hero.role}}</span>
+
+	</li>
+</ul>

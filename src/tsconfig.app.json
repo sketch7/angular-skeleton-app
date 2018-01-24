@@ -11,6 +11,9 @@
       "@odin/ngx.core": [
         "../../odin.ngx.core/src/index.ts"
       ]
+      // "@odin/ngx.shared": [
+      //   "../../odin.ngx.shared/src/index.ts"
+      // ]
     },
     "outDir": "../out-tsc/app",
     "baseUrl": "./",
@@ -23,6 +26,7 @@
   ],
   "include": [
     "./**/*.ts",
-    "../../odin.ngx.core/src/index.ts"
+    "../../odin.ngx.core/src/index.ts",
+    // "../../odin.ngx.shared/src/index.ts"
   ]
 }
