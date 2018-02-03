@@ -1,0 +1,25 @@
+version: 2
+jobs:
+  build:
+    working_directory: /app
+    docker:
+      - image: node:9.4
+    steps:
+      - run:
+          name: Print environment versions
+          command: |
+            NPM_V=$(npm -v)
+            echo npm version':' $NPM_V
+      - checkout
+      - run:
+          name: Package Install
+          command: npm i
+      - run:
+          name: lint
+          command: npm run lint
+      - run:
+          name: build
+          command: npm run build
+      - run:
+          name: test
+          command: npm test
