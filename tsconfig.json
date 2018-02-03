@@ -7,6 +7,7 @@
       "rxjs/*": ["../node_modules/rxjs/*"],
       "@odin/ngx.core": ["../../odin.ngx.core/src/index.ts"]
       // "@odin/ngx.shared": ["../../odin.ngx.shared/src/index.ts"]
+      // "@ssv/ngx.command": ["../../@ssv.ngx.command/src/index.ts"]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,

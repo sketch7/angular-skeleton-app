@@ -13,7 +13,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { environment } from "../environments/environment";
 import { AppComponent } from "./app.component";
 import { AREAS_COMPONENTS, AREAS_SERVICES } from "./areas/index";
-import { AppSharedModule } from "./shared/shared.module";
+import { AppSharedModule } from "./shared";
 import { LocaleSampleInterceptor } from "./http.interceptor";
 
 const coreConfig: CoreConfig = {

@@ -1,9 +1,20 @@
-import { Component, OnInit, OnDestroy, Inject, Renderer2, Optional, ElementRef, ViewChild } from "@angular/core";
-
-import { AppInfoService } from "../../shared";
+import {
+	Component,
+	OnInit,
+	OnDestroy,
+	Inject,
+	Renderer2,
+	Optional,
+	ElementRef,
+	ViewChild,
+} from "@angular/core";
 import { DOCUMENT } from "@angular/common";
 
-export function isHtmlLinkElement(element: Element): element is HTMLLinkElement {
+import { AppInfoService } from "../../shared";
+
+export function isHtmlLinkElement(
+	element: Element,
+): element is HTMLLinkElement {
 	return element.tagName.toLowerCase() === "a";
 }
 
@@ -25,20 +36,24 @@ export class NavComponent implements OnInit, OnDestroy {
 	isDebug = this.appInfo.isDebug;
 
 	isMenuOpened = false;
-	@ViewChild("menu") menuElementRef: ElementRef;
+	@ViewChild("menu") menuElementRef: ElementRef | undefined;
 
-	private domClickListener$$: () => void;
+	private domClickListener$$!: () => void;
 
 	constructor(
 		@Optional()
 		@Inject(DOCUMENT)
 		private document: any,
 		private appInfo: AppInfoService,
-		private renderer: Renderer2
+		private renderer: Renderer2,
 	) {}
 
 	ngOnInit(): void {
-		this.domClickListener$$ = this.renderer.listen(this.document, "click", this.onBodyClick.bind(this));
+		this.domClickListener$$ = this.renderer.listen(
+			this.document,
+			"click",
+			this.onBodyClick.bind(this),
+		);
 	}
 
 	ngOnDestroy(): void {
@@ -46,11 +61,14 @@ export class NavComponent implements OnInit, OnDestroy {
 	}
 
 	onBodyClick(event: Event): void {
-		if (!this.isMenuOpened) {
+		if (!this.menuElementRef || !this.isMenuOpened) {
 			return;
 		}
 
-		if (event.target === this.menuElementRef.nativeElement || this.menuElementRef.nativeElement.contains(event.target as Node)) {
+		if (
+			event.target === this.menuElementRef.nativeElement ||
+			this.menuElementRef.nativeElement.contains(event.target as Node)
+		) {
 			const target = event.target as Element;
 			if (!isHtmlLinkElement(target)) {
 				return;

@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { LoggingFactory, ViewportService } from "@odin/ngx.core";
+
 import { Project } from "./projects.model";
 import { ISubscription } from "rxjs/Subscription";
 import { tap } from "rxjs/operators";
@@ -29,12 +30,12 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
 		// ngx
 		{
-			key: "ng2-command",
-			title: "@ssv/ng2-command",
+			key: "ngx-command",
+			title: "@ssv/ngx.command",
 			tag: "angular",
-			url: "https://github.com/sketch7/ssv-ng2-command",
+			url: "https://github.com/sketch7/ngx.command",
 			description:
-				"Command pattern implementation for angular 2. Command's are used to encapsulate information which is needed to perform an action.",
+				"Command pattern implementation for angular. Command used to encapsulate information which is needed to perform an action.",
 		},
 		{
 			key: "angular-skeleton-app",
@@ -77,8 +78,8 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 		},
 	];
 
-	private resize$$: ISubscription;
-	private viewportSize$$: ISubscription;
+	private resize$$!: ISubscription;
+	private viewportSize$$!: ISubscription;
 
 	constructor(
 		loggerFactory: LoggingFactory,
