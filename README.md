@@ -6,7 +6,8 @@ Angular 5.x navigation skeleton project with styling which get you started faste
  - SCSS for styling
  - Font Awesome and Bootstrap 4.x (no javascript, just styles)
  - Navigation/layout
- - Theming 
+ - Theming
+ - Circle CI 2 integration
 
  ![Angular Skeleton App](./screenshot.jpg)
 

@@ -6,6 +6,7 @@
  - `tsconfig` and `tsconfig.app` now has config for libraries linking
  - add `.pretierrc` config file
  - add tests for `nav`
+ - circle ci 2 integration
 
 ### Fixes
 
