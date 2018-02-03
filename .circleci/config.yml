@@ -1,11 +1,11 @@
 version: 2
 jobs:
   build:
-    working_directory: /app
+    working_directory: ~/app
     docker:
       - image: circleci/node:9.4-browsers
-      environment:
-        - CHROME_BIN: "/usr/bin/google-chrome"
+    environment:
+      - CHROME_BIN: "/usr/bin/google-chrome"
     steps:
       - run:
           name: Print environment versions
