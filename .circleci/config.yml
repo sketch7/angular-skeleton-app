@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: /app
     docker:
-      - image: node:9.4
+      - image: circleci/node:9.4-browsers
     steps:
       - run:
           name: Print environment versions
