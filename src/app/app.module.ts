@@ -8,7 +8,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { environment } from "../environments/environment";
 import { AppComponent } from "./app.component";
 import { AREAS_COMPONENTS } from "./areas/index";
-import { AppSharedModule } from "./shared/shared.module";
+import { AppSharedModule } from "./shared";
 
 const coreConfig: CoreConfig = {
 	appInfo: {

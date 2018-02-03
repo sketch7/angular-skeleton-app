@@ -1,3 +1,4 @@
+
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
@@ -11,6 +12,7 @@
       "@odin/ngx.core": [
         "../../odin.ngx.core/src/index.ts"
       ]
+      // "@ssv/ngx.command": ["../../@ssv.ngx.command/src/index.ts"]
     },
     "outDir": "../out-tsc/app",
     "baseUrl": "./",
@@ -24,5 +26,6 @@
   "include": [
     "./**/*.ts",
     "../../odin.ngx.core/src/index.ts"
+    // "../../@ssv.ngx.command/src/index.ts"
   ]
 }
