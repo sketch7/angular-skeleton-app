@@ -5,7 +5,6 @@
     "paths": {
       "@angular/*": ["../node_modules/@angular/*"],
       "rxjs/*": ["../node_modules/rxjs/*"]
-      // "@ssv/ngx.command": ["../node_modules/@ssv/ngx.command/src/index.ts"]
       // "@ssv/ngx.command": ["../../@ssv.ngx.command/src/index.ts"]
     },
     "outDir": "./dist/out-tsc",
