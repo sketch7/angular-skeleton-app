@@ -13,9 +13,15 @@ jobs:
             NPM_V=$(npm -v)
             echo npm version':' $NPM_V
       - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: Package Install
           command: npm i
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
       - run:
           name: lint
           command: npm run lint
@@ -24,4 +30,7 @@ jobs:
           command: npm run build
       - run:
           name: test
-          command: npm test -- --singleRun
+          command: npm test -- --singleRun --code-coverage
+      - store_artifacts:
+          path: coverage
+          prefix: coverage
