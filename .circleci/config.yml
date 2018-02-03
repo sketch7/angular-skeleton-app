@@ -5,7 +5,7 @@ jobs:
     docker:
       - image: circleci/node:9.4-browsers
       environment:
-        CHROME_BIN: "/usr/bin/google-chrome"
+        - CHROME_BIN: "/usr/bin/google-chrome"
     steps:
       - run:
           name: Print environment versions
@@ -24,4 +24,4 @@ jobs:
           command: npm run build
       - run:
           name: test
-          command: npm test
+          command: npm test -- --singleRun
