@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { Project } from "./projects.model";
 
 @Component({
@@ -6,7 +6,7 @@ import { Project } from "./projects.model";
 	templateUrl: "./projects.component.html",
 	styleUrls: ["./projects.component.scss"],
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsComponent {
 	projects: Project[] = [
 		// js
 		{
@@ -73,8 +73,4 @@ export class ProjectsComponent implements OnInit {
 			description: "Http Client for .NET Standard with fluent APIs which are intuitive, easy to use and also highly extensible.",
 		},
 	];
-
-	constructor() {}
-
-	ngOnInit() {}
 }
