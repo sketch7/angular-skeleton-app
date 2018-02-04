@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { Project } from "./projects.model";
 
 @Component({
@@ -6,7 +6,7 @@ import { Project } from "./projects.model";
 	templateUrl: "./projects.component.html",
 	styleUrls: ["./projects.component.scss"],
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsComponent {
 	projects: Project[] = [
 		// js
 		{
@@ -26,12 +26,12 @@ export class ProjectsComponent implements OnInit {
 
 		// ngx
 		{
-			key: "ng2-command",
-			title: "@ssv/ng2-command",
+			key: "ngx-command",
+			title: "@ssv/ngx.command",
 			tag: "angular",
-			url: "https://github.com/sketch7/ssv-ng2-command",
+			url: "https://github.com/sketch7/ngx.command",
 			description:
-				"Command pattern implementation for angular 2. Command's are used to encapsulate information which is needed to perform an action.",
+				"Command pattern implementation for angular. Command used to encapsulate information which is needed to perform an action.",
 		},
 		{
 			key: "angular-skeleton-app",
@@ -73,8 +73,4 @@ export class ProjectsComponent implements OnInit {
 			description: "Http Client for .NET Standard with fluent APIs which are intuitive, easy to use and also highly extensible.",
 		},
 	];
-
-	constructor() {}
-
-	ngOnInit() {}
 }
