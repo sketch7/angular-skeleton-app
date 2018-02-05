@@ -4,7 +4,7 @@ import { ApolloBase } from "apollo-angular/Apollo";
 import gql from "graphql-tag";
 import { Observable } from "rxjs/Observable";
 
-import { HeroRoleType, Hero, GraphQLSchema } from "./hero.model";
+import { HeroRoleType, GraphQLSchema, Author } from "./hero.model";
 import { map, tap } from "rxjs/operators";
 
 
@@ -12,15 +12,13 @@ import { map, tap } from "rxjs/operators";
 export class HeroService {
 
 	private apolloClient: ApolloBase<any>;
-	private getAllGqlQuery = gql`
-	query GetAllHeroes($role: HeroRoleEnum) {
-		heroes (role: $role) {
-			key,
-			name,
-			role,
-			health,
+	private getGqlQuery = gql`
+	query firstAuthor {
+		author(id: 1) {
+		  id
+		  firstName
 		}
-	}
+	  }
 	`;
 
 	constructor(
@@ -29,29 +27,29 @@ export class HeroService {
 		this.apolloClient = apollo.use("shrd");
 	}
 
-	getAll(role?: HeroRoleType): Observable<Hero[]> {
+	get(role?: HeroRoleType): Observable<Author> {
 		return this.apolloClient.query<GraphQLSchema>({
-			query: this.getAllGqlQuery,
+			query: this.getGqlQuery,
 			variables: {
 				role
 			}
 		}).pipe(
-			map(x => x.data.heroes!),
+			map(x => x.data.author!),
 			tap(x => console.warn(">>> getAll", x))
 			);
 	}
 
-	getAllViaWatch(role?: HeroRoleType) {
-		return this.getAllQuery(role)
+	getViaWatch(role?: HeroRoleType) {
+		return this.getQuery(role)
 			.valueChanges.pipe(
-			map(x => x.data.heroes!),
+			map(x => x.data.author!),
 			tap(x => console.warn(">>> getAllViaWatch", x))
 			);
 	}
 
-	getAllQuery(role?: HeroRoleType): QueryRef<GraphQLSchema> {
+	getQuery(role?: HeroRoleType): QueryRef<GraphQLSchema> {
 		return this.apolloClient.watchQuery({
-			query: this.getAllGqlQuery,
+			query: this.getGqlQuery,
 			variables: {
 				role
 			}
@@ -59,9 +57,9 @@ export class HeroService {
 	}
 
 	refresh() {
-		const ref = this.getAllQuery();
+		const ref = this.getQuery();
 		ref.valueChanges.pipe(
-			map(x => x.data.heroes!),
+			map(x => x.data.author!),
 			tap(x => console.warn(">>> refresh", x))
 			);
 		ref.refetch();

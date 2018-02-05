@@ -10,9 +10,9 @@
         "../node_modules/rxjs/*"
       ],
       // "@ssv/ngx.command": ["../../@ssv.ngx.command/src/index.ts"],
-      "@odin/ngx.core": [
-        "../../odin.ngx.core/src/index.ts"
-      ]
+      // "@odin/ngx.core": [
+      //   "../../odin.ngx.core/src/index.ts"
+      // ]
       // "@odin/ngx.shared": [
       //   "../../odin.ngx.shared/src/index.ts"
       // ]
@@ -29,7 +29,7 @@
   "include": [
     "./**/*.ts",
     // "../../@ssv.ngx.command/src/index.ts",
-    "../../odin.ngx.core/src/index.ts",
+    // "../../odin.ngx.core/src/index.ts",
     // "../../odin.ngx.shared/src/index.ts"
   ]
 }

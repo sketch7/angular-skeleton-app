@@ -5,7 +5,7 @@ import { ApolloModule, Apollo } from "apollo-angular";
 import { HttpLinkModule, HttpLink } from "apollo-angular-link-http";
 import { ServiceWorkerModule } from "@angular/service-worker";
 import { InMemoryCache } from "apollo-cache-inmemory";
-import { OdinCoreModule, CoreConfig, DeviceType, EnvironmentType } from "@odin/ngx.core";
+// import { OdinCoreModule, CoreConfig, DeviceType, EnvironmentType } from "@odin/ngx.core";
 // import { OdinSharedModule } from "@odin/ngx.shared";
 
 import { AppRoutingModule } from "./app-routing.module";
@@ -16,18 +16,18 @@ import { AREAS_COMPONENTS, AREAS_SERVICES } from "./areas/index";
 import { AppSharedModule } from "./shared";
 import { LocaleSampleInterceptor } from "./http.interceptor";
 
-const coreConfig: CoreConfig = {
-	appInfo: {
-		name: "angular-skeleton",
-		environment: EnvironmentType.dev,
-		gitCommit: "-",
-		version: "1.0"
-	},
-	appConfig: {},
-	isDebug: true,
-	deviceType: DeviceType.desktop,
-	languageCode: "en-GB"
-};
+// const coreConfig: CoreConfig = {
+// 	appInfo: {
+// 		name: "angular-skeleton",
+// 		environment: EnvironmentType.dev,
+// 		gitCommit: "-",
+// 		version: "1.0"
+// 	},
+// 	appConfig: {},
+// 	isDebug: true,
+// 	deviceType: DeviceType.desktop,
+// 	languageCode: "en-GB"
+// };
 
 @NgModule({
 	declarations: [AppComponent, ...AREAS_COMPONENTS],
@@ -39,7 +39,7 @@ const coreConfig: CoreConfig = {
 		AppRoutingModule,
 		AppSharedModule,
 		// OdinSharedModule,
-		OdinCoreModule.forRoot(coreConfig),
+		// OdinCoreModule.forRoot(coreConfig),
 		ServiceWorkerModule.register("/ngsw-worker.js", { enabled: environment.production }),
 	],
 	providers: [
@@ -58,9 +58,11 @@ export class AppModule {
 		apollo: Apollo,
 		httpLink: HttpLink,
 	) {
+		// GraphiQL: https://launchpad.graphql.com/1jzxrj179
+		const uri = "https://1jzxrj179.lp.gql.zone/graphql";
 		apollo.create({
 			link: httpLink.create({
-				uri: "http://localhost:62551/graphql"
+				uri
 			}),
 			cache: new InMemoryCache()
 		}, "shrd");

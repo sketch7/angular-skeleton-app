@@ -15,6 +15,11 @@ export enum HeroRoleType {
 	marksman = 6,
 }
 
+export interface Author {
+	id: number;
+	firstName: string;
+}
+
 export interface GraphQLSchema {
-	heroes?: Hero[];
+	author?: Author;
 }
