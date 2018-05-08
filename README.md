@@ -1,8 +1,8 @@
 # Angular Skeleton App
-Angular 5.x navigation skeleton project with styling which get you started faster.
+Angular 6.x navigation skeleton project with styling which get you started faster.
 
 ## What does it have?
- - Angular CLI 1.6 template
+ - Angular CLI 6.0 template
  - SCSS for styling
  - Font Awesome and Bootstrap 4.x (no javascript, just styles)
  - Navigation/layout
@@ -29,7 +29,7 @@ Run `npm run start:prod` build and run for production.
 
 # Angular CLI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.
 
 ## Development server
 
