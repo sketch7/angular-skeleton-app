@@ -8,7 +8,6 @@
   "rules": {
     "import-blacklist": [
       true,
-      "rxjs",
       "rxjs/Rx"
     ],
     "directive-selector": [

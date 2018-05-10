@@ -1,6 +1,5 @@
 import { Component } from "@angular/core";
-import { BehaviorSubject } from "rxjs/BehaviorSubject";
-import { timer } from "rxjs/observable/timer";
+import { BehaviorSubject, timer } from "rxjs";
 import { tap, filter } from "rxjs/operators";
 import { CommandAsync } from "@ssv/ngx.command";
 
