@@ -20,7 +20,8 @@ const coreConfig: CoreConfig = {
 	appConfig: {},
 	isDebug: true,
 	deviceType: DeviceType.desktop,
-	languageCode: "en-GB"
+	languageCode: "en-GB",
+	countryCode: "MT"
 };
 
 @NgModule({

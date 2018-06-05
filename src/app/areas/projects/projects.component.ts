@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { LoggingFactory, ViewportService } from "@odin/ngx.core";
 import { Project } from "./projects.model";
-import { ISubscription } from "rxjs/Subscription";
 import { tap } from "rxjs/operators";
+import { Subscription } from "rxjs/internal/Subscription";
 
 @Component({
 	selector: "app-projects",
@@ -77,8 +77,8 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 		},
 	];
 
-	private resize$$!: ISubscription;
-	private viewportSize$$!: ISubscription;
+	private resize$$!: Subscription;
+	private viewportSize$$!: Subscription;
 
 	constructor(
 		loggerFactory: LoggingFactory,
