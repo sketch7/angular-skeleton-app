@@ -1,5 +1,6 @@
 import { TestBed, async } from "@angular/core/testing";
 import { RouterTestingModule } from "@angular/router/testing";
+import { CommandModule } from "@ssv/ngx.command";
 
 import { AppComponent } from "./app.component";
 import { AREAS_COMPONENTS } from "./areas";
@@ -9,7 +10,7 @@ describe("AppComponent", () => {
 	beforeEach(
 		async(() => {
 			TestBed.configureTestingModule({
-				imports: [RouterTestingModule, AppSharedModule],
+				imports: [RouterTestingModule, AppSharedModule, CommandModule],
 				declarations: [AppComponent, AREAS_COMPONENTS],
 			}).compileComponents();
 		}),

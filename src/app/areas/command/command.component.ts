@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { BehaviorSubject, timer } from "rxjs";
 import { tap, filter } from "rxjs/operators";
 import { CommandAsync } from "@ssv/ngx.command";
@@ -7,6 +7,7 @@ import { CommandAsync } from "@ssv/ngx.command";
 	selector: "app-command",
 	templateUrl: "./command.component.html",
 	styleUrls: ["./command.component.scss"],
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CommandComponent {
 	isValid = true;
