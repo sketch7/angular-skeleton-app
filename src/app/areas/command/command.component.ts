@@ -1,4 +1,8 @@
-import { Component, ChangeDetectionStrategy } from "@angular/core";
+import {
+	Component,
+	ChangeDetectionStrategy,
+	ChangeDetectorRef,
+} from "@angular/core";
 import { BehaviorSubject, timer } from "rxjs";
 import { tap, filter } from "rxjs/operators";
 import { CommandAsync } from "@ssv/ngx.command";
@@ -25,10 +29,13 @@ export class CommandComponent {
 	// saveCmd: ICommand = new Command(this.save$.bind(this), null, true);
 	private _state = new BehaviorSubject({ isLoading: false });
 
+	constructor(private cdr: ChangeDetectorRef) {}
+
 	save() {
 		this.isExecuting = true;
 		setTimeout(() => {
 			this.isExecuting = false;
+			this.cdr.markForCheck();
 			console.warn("save", "execute complete");
 		}, 2000);
 	}
