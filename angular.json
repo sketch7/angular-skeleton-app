@@ -16,6 +16,7 @@
             "main": "src/main.ts",
             "tsConfig": "src/tsconfig.app.json",
             "polyfills": "src/polyfills.ts",
+            "preserveSymlinks": true,
             "stylePreprocessorOptions": {
               "includePaths": [
                 "src/assets/styles"
@@ -79,6 +80,11 @@
             "styles": [
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/styles"
+              ]
+            },
             "assets": [
               "src/assets",
               "src/favicon.ico"

@@ -1,3 +1,11 @@
+<a name="1.1.1"></a>
+# [1.1.1](https://github.com/sketch7/angular-skeleton-app/compare/1.1.0...1.1.1) (2018-07-31)
+
+### Features
+
+ - update dependencies
+ - minor improvements for linking
+
 <a name="1.0.3"></a>
 # [1.0.3](https://github.com/sketch7/angular-skeleton-app/compare/1.0.2...1.0.3) (2018-04-10)
 
