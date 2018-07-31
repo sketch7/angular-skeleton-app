@@ -1,0 +1,48 @@
+@import "vars";
+
+$var-boolean-value-color: $azure-radiance;
+$var-prop-color: #9cdcfe;
+$var-code-font: "consolas";
+
+.container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+.type {
+	font-family: $var-code-font;
+
+	&.variable {
+		color: $var-prop-color;
+	}
+
+	&.boolean {
+		&.value {
+			color: $var-boolean-value-color;
+		}
+	}
+}
+
+fieldset {
+	margin: 2em 0;
+}
+
+.form-group {
+	margin-left: 1em;
+}
+
+// default
+.executing {
+	background: $amber;
+}
+
+// custom default
+.is-busy {
+	background: $haiti;
+}
+
+// set at [commandOptions]
+.is-loading {
+	background: $cerise;
+}
