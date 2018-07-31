@@ -14,6 +14,7 @@ $var-code-font: "consolas";
 	font-family: $var-code-font;
 
 	&.variable {
+		margin-right: 0.5em;
 		color: $var-prop-color;
 	}
 
