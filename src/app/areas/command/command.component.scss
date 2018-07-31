@@ -32,6 +32,12 @@ fieldset {
 	margin-left: 1em;
 }
 
+.button-group {
+	button {
+		margin-right: 0.5em;
+	}
+}
+
 // default
 .executing {
 	background: $amber;
