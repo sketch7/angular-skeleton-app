@@ -17,7 +17,7 @@ import { ViewportService, ViewportSizeTypeInfo } from "./viewport.service";
 @Directive({
 	selector: "[ssvViewportMatcher]",
 })
-export class SsvViewportMatcher implements OnInit, OnDestroy {
+export class SsvViewportMatcherDirective implements OnInit, OnDestroy {
 	private _context: SsvViewportMatcherContext = new SsvViewportMatcherContext();
 	private _thenTemplateRef: TemplateRef<
 		SsvViewportMatcherContext
@@ -165,15 +165,15 @@ export class SsvViewportMatcherContext {
 }
 
 function match(
-	sizeType: string | string[] | null,
-	currentSizeType: string,
+	value: string | string[] | null,
+	targetValue: string,
 	defaultValue: boolean,
 ) {
-	if (!sizeType) {
+	if (!value) {
 		return defaultValue;
 	}
 
-	return _.isArray(sizeType)
-		? _.includes(sizeType, currentSizeType)
-		: sizeType === currentSizeType;
+	return _.isArray(value)
+		? _.includes(value, targetValue)
+		: value === targetValue;
 }

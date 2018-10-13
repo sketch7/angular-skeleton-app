@@ -8,7 +8,7 @@ import { ProjectsComponent } from "./projects/projects.component";
 import { ProjectComponent } from "./projects/project.component";
 import { CommandComponent } from "./command/command.component";
 import { ViewportComponent } from "./viewport/viewport.component";
-import { SsvViewportMatcher } from "./viewport/viewport-matcher.directive";
+import { SsvViewportMatcherDirective } from "./viewport/viewport-matcher.directive";
 
 export const AREAS_ROUTES: Routes = [
 	{ path: "", component: HomeComponent, pathMatch: "full" },
@@ -28,5 +28,5 @@ export const AREAS_COMPONENTS = [
 	NotFoundComponent,
 	CommandComponent,
 	ViewportComponent,
-	SsvViewportMatcher
+	SsvViewportMatcherDirective
 ];
