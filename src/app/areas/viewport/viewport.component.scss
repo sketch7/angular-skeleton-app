@@ -43,5 +43,12 @@ fieldset {
 	display: block;
 	width: 100%;
 	background: rgba($black, 0.4);
-	padding: 2.5em;
+	padding: 1em;
+	margin: 0.5em;
+
+	&__target {
+		display: block;
+		color: $var-prop-color;
+		font-size: 0.8em;
+	}
 }
