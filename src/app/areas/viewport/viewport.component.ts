@@ -19,6 +19,7 @@ import { ViewportService, ViewportSizeTypeInfo } from "./viewport.service";
 export class ViewportComponent implements OnInit, OnDestroy {
 	private sizeType$$: Subscription | undefined;
 	viewportSize: ViewportSizeTypeInfo | undefined;
+	isVisible = true;
 
 	constructor(private viewport: ViewportService, private cdr: ChangeDetectorRef) {}
 

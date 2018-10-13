@@ -39,7 +39,9 @@ fieldset {
 	}
 }
 
-.matcher-container {
+.matcher-dummy-container {
+	display: block;
+	width: 100%;
 	background: rgba($black, 0.4);
-	padding: 0.5em;
+	padding: 2.5em;
 }

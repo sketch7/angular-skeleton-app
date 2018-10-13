@@ -13,7 +13,15 @@
 			</div>
 		</div>
 	</fieldset>
-	<fieldset ssvViewportMatcher class="matcher-container">
+	<fieldset>
 		<legend>Viewport Matcher Container</legend>
+		<div class="btn-group" role="group">
+			<button class="btn btn-sm" type="button" (click)="isVisible = !isVisible">
+				toggle ({{isVisible}})
+			</button>
+		</div>
+		<div *ssvViewportMatcher="isVisible" class="matcher-dummy-container">
+			Dummy container
+		</div>
 	</fieldset>
 </div>
