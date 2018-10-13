@@ -8,7 +8,7 @@ import {
 import { Subscription } from "rxjs";
 import { tap } from "rxjs/operators";
 
-import { ViewportService, ViewportSizeRef } from "./viewport.service";
+import { ViewportService, ViewportSizeTypeInfo } from "./viewport.service";
 
 @Component({
 	selector: "app-viewport",
@@ -18,7 +18,7 @@ import { ViewportService, ViewportSizeRef } from "./viewport.service";
 })
 export class ViewportComponent implements OnInit, OnDestroy {
 	private sizeType$$: Subscription | undefined;
-	viewportSize: ViewportSizeRef | undefined;
+	viewportSize: ViewportSizeTypeInfo | undefined;
 
 	constructor(private viewport: ViewportService, private cdr: ChangeDetectorRef) {}
 

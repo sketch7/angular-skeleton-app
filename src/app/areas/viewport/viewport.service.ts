@@ -29,10 +29,10 @@ export enum ViewportSizeType {
 	xxlarge = 5,
 }
 
-export interface ViewportSizeRef {
+export interface ViewportSizeTypeInfo {
 	type: ViewportSizeType;
 	name: string;
-	width: number;
+	widthThreshold: number;
 }
 
 /** Viewport sizes config, by upper bound. e.g. given width '1000' and `medium` is set to '992' => `large`. */
@@ -46,37 +46,37 @@ const viewportSizesConfig = {
 };
 
 // todo: autogenereate
-const viewportSizeRefs: Dictionary<Readonly<ViewportSizeRef>> = {
+const viewportSizeRefs: Dictionary<Readonly<ViewportSizeTypeInfo>> = {
 	[ViewportSizeType.xsmall]: Object.freeze({
 		name: "xsmall",
 		type: ViewportSizeType.xsmall,
-		width: viewportSizesConfig.xsmall,
-	}),
+		widthThreshold: viewportSizesConfig.xsmall,
+	} as ViewportSizeTypeInfo),
 	[ViewportSizeType.small]: Object.freeze({
 		name: "small",
 		type: ViewportSizeType.small,
-		width: viewportSizesConfig.small,
-	}),
+		widthThreshold: viewportSizesConfig.small,
+	} as ViewportSizeTypeInfo),
 	[ViewportSizeType.medium]: Object.freeze({
 		name: "medium",
 		type: ViewportSizeType.medium,
-		width: viewportSizesConfig.medium,
-	}),
+		widthThreshold: viewportSizesConfig.medium,
+	} as ViewportSizeTypeInfo),
 	[ViewportSizeType.large]: Object.freeze({
 		name: "large",
 		type: ViewportSizeType.large,
-		width: viewportSizesConfig.large,
-	}),
+		widthThreshold: viewportSizesConfig.large,
+	} as ViewportSizeTypeInfo),
 	[ViewportSizeType.xlarge]: Object.freeze({
 		name: "xlarge",
 		type: ViewportSizeType.xlarge,
-		width: viewportSizesConfig.xlarge,
-	}),
+		widthThreshold: viewportSizesConfig.xlarge,
+	} as ViewportSizeTypeInfo),
 	[ViewportSizeType.xxlarge]: Object.freeze({
 		name: "xxlarge",
 		type: ViewportSizeType.xxlarge,
-		width: viewportSizesConfig.xxlarge,
-	}),
+		widthThreshold: viewportSizesConfig.xxlarge,
+	} as ViewportSizeTypeInfo),
 };
 
 /** Polling speed in [ms] can be used for throttle, debounce etc... */
@@ -112,7 +112,7 @@ export class ViewportService {
 	resize$: Observable<ViewportSize>;
 
 	/** Observable when window is resized (which is also throttled). */
-	sizeType$: Observable<ViewportSizeRef>;
+	sizeType$: Observable<ViewportSizeTypeInfo>;
 
 	constructor(
 		// private windowRef: WindowRef,
@@ -143,39 +143,23 @@ export class ViewportService {
 		};
 	}
 
-	private calculateViewportSize(width: number): ViewportSizeRef {
+	private calculateViewportSize(width: number): ViewportSizeTypeInfo {
 		if (_.inRange(width, viewportSizesConfig.xsmall)) {
 			return viewportSizeRefs[ViewportSizeType.xsmall];
 		} else if (
-			_.inRange(
-				width,
-				viewportSizesConfig.xsmall,
-				viewportSizesConfig.small,
-			)
+			_.inRange(width, viewportSizesConfig.xsmall, viewportSizesConfig.small)
 		) {
 			return viewportSizeRefs[ViewportSizeType.small];
 		} else if (
-			_.inRange(
-				width,
-				viewportSizesConfig.small,
-				viewportSizesConfig.medium,
-			)
+			_.inRange(width, viewportSizesConfig.small, viewportSizesConfig.medium)
 		) {
 			return viewportSizeRefs[ViewportSizeType.medium];
 		} else if (
-			_.inRange(
-				width,
-				viewportSizesConfig.medium,
-				viewportSizesConfig.large,
-			)
+			_.inRange(width, viewportSizesConfig.medium, viewportSizesConfig.large)
 		) {
 			return viewportSizeRefs[ViewportSizeType.large];
 		} else if (
-			_.inRange(
-				width,
-				viewportSizesConfig.large,
-				viewportSizesConfig.xlarge,
-			)
+			_.inRange(width, viewportSizesConfig.large, viewportSizesConfig.xlarge)
 		) {
 			return viewportSizeRefs[ViewportSizeType.xlarge];
 		} else {
