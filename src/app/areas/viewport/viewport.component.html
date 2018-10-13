@@ -1,0 +1,40 @@
+<h1>Viewport</h1>
+<p>Experimental area for viewport
+</p>
+<div class="container">
+	<fieldset>
+		<legend>Size info</legend>
+		<!-- <div class="btn-group"
+		 role="group">
+			<button class="btn btn-sm"
+			 type="button"
+			 [ngClass]="{'btn-success': !isValid, 'btn-danger': isValid}"
+			 (click)="toggleValidity()">
+				Mark as {{ isValid ? "Invalid" : "Valid" }}
+			</button>
+		</div> -->
+		<div class="form-group">
+			<div>
+				<small>
+					<span class="type variable">viewportSize</span>
+					<span class="type boolean value">{{viewportSize | json}}</span>
+				</small>
+			</div>
+			<!-- <div>
+				<small>
+					<span class="type variable">isExecuting</span>
+					<span class="type boolean value">{{isExecuting}}</span>
+				</small>
+			</div> -->
+		</div>
+		<!-- <div class="button-group">
+			<button class="btn btn-primary"
+			 type="button"
+			 [disabled]="!isValid || isExecuting"
+			 (click)="save()">
+				Save
+				<small>execute</small>
+			</button>
+		</div> -->
+	</fieldset>
+</div>

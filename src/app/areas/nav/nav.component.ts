@@ -28,6 +28,7 @@ export class NavComponent implements OnInit, OnDestroy {
 		// { path: ["/"], title: "Home", activeOptions: { exact: true } },
 		{ path: ["/projects"], title: "Projects" },
 		{ path: ["/command"], title: "Command" },
+		{ path: ["/viewport"], title: "Viewport" },
 	];
 
 	appTitle = this.appInfo.title;

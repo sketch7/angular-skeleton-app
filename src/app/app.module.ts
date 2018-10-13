@@ -9,6 +9,7 @@ import { environment } from "../environments/environment";
 import { AppComponent } from "./app.component";
 import { AREAS_COMPONENTS } from "./areas/index";
 import { AppSharedModule } from "./shared";
+import { ViewportService } from "./areas/viewport/viewport.service";
 
 // const commandConfig: CommandOptions = {
 // 	executingCssClass: "is-busy",
@@ -24,7 +25,7 @@ import { AppSharedModule } from "./shared";
 		CommandModule.forRoot(),
 		ServiceWorkerModule.register("/ngsw-worker.js", { enabled: environment.production }),
 	],
-	providers: [],
+	providers: [ViewportService],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}
