@@ -1,19 +1,14 @@
 <h1>Command</h1>
 <p>Experimental area to test out
-	<a href="https://github.com/sketch7/ngx.command"
-	 target="_blank"
-	 rel="noopener">
+	<a href="https://github.com/sketch7/ngx.command" target="_blank" rel="noopener">
 		<strong>@ssv/ngx.command</strong></a>.
 </p>
 <div class="container">
 	<fieldset>
 		<legend>Vanilla</legend>
-		<div class="btn-group"
-		 role="group">
-			<button class="btn btn-sm"
-			 type="button"
-			 [ngClass]="{'btn-success': !isValid, 'btn-danger': isValid}"
-			 (click)="toggleValidity()">
+		<div class="btn-group" role="group">
+			<button class="btn btn-sm" type="button" [ngClass]="{'btn-success': !isValid, 'btn-danger': isValid}"
+			        (click)="toggleValidity()">
 				Mark as {{ isValid ? "Invalid" : "Valid" }}
 			</button>
 		</div>
@@ -32,10 +27,7 @@
 			</div>
 		</div>
 		<div class="button-group">
-			<button class="btn btn-primary"
-			 type="button"
-			 [disabled]="!isValid || isExecuting"
-			 (click)="save()">
+			<button class="btn btn-primary" type="button" [disabled]="!isValid || isExecuting" (click)="save()">
 				Save
 				<small>execute</small>
 			</button>
@@ -43,12 +35,9 @@
 	</fieldset>
 	<fieldset>
 		<legend>Using Command</legend>
-		<div class="btn-group"
-		 role="group">
-			<button class="btn btn-sm"
-			 type="button"
-			 [ngClass]="{'btn-success': !isValid$.value, 'btn-danger': isValid$.value}"
-			 (click)="toggleValidity$()">
+		<div class="btn-group" role="group">
+			<button class="btn btn-sm" type="button" [ngClass]="{'btn-success': !isValid$.value, 'btn-danger': isValid$.value}"
+			        (click)="toggleValidity$()">
 				Mark as {{ (isValid$ | async) ? "Invalid" : "Valid" }}
 			</button>
 		</div>
@@ -73,10 +62,7 @@
 			</div>
 		</div>
 		<div class="button-group">
-			<button class="btn btn-primary"
-			 type="button"
-			 [disabled]="!saveCmd.canExecute"
-			 (click)="saveCmd.execute()">
+			<button class="btn btn-primary" type="button" [disabled]="!saveCmd.canExecute" (click)="saveCmd.execute()">
 				Save
 				<small>execute</small>
 			</button>
@@ -103,12 +89,9 @@
 	</fieldset>
 	<!-- <fieldset>
 		<legend>Using Command Redux</legend>
-		<div class="btn-group"
-		 role="group">
-			<button class="btn btn-sm"
-			 type="button"
-			 [ngClass]="{'btn-success': !isValidRedux$.value, 'btn-danger': isValidRedux$.value}"
-			 (click)="toggleValidityRedux()">
+		<div class="btn-group" role="group">
+			<button class="btn btn-sm" type="button" [ngClass]="{'btn-success': !isValidRedux$.value, 'btn-danger': isValidRedux$.value}"
+			        (click)="toggleValidityRedux()">
 				Mark as {{ (isValidRedux$ | async) ? "Invalid" : "Valid" }}
 			</button>
 		</div>
@@ -133,32 +116,44 @@
 			</div>
 		</div>
 		<div class="button-group">
-			<button class="btn btn-primary"
-			 type="button"
-			 [disabled]="!saveReduxCmd.canExecute"
-			 (click)="saveReduxCmd.execute()">
+			<button class="btn btn-primary" type="button" [disabled]="!saveReduxCmd.canExecute" (click)="saveReduxCmd.execute()">
 				Save
 				<small>execute</small>
 			</button>
 
-			<button class="btn btn-primary"
-			 type="button"
-			 [command]="saveReduxCmd">
-				<i *ngIf="saveReduxCmd.isExecuting"
-				 class="ai-circled ai-indicator ai-dark-spin small"></i>
+			<button class="btn btn-primary" type="button" [command]="saveReduxCmd">
+				<i *ngIf="saveReduxCmd.isExecuting" class="ai-circled ai-indicator ai-dark-spin small"></i>
 				Save
 				<small>with [command]</small>
 			</button>
 
-			<button class="btn btn-primary"
-			 type="button"
-			 [command]="saveReduxCmd"
-			 [commandOptions]="{executingCssClass: 'is-loading'}">
-				<i *ngIf="saveReduxCmd.isExecuting"
-				 class="ai-circled ai-indicator ai-dark-spin small"></i>
+			<button class="btn btn-primary" type="button" [command]="saveReduxCmd" [commandOptions]="{executingCssClass: 'is-loading'}">
+				<i *ngIf="saveReduxCmd.isExecuting" class="ai-circled ai-indicator ai-dark-spin small"></i>
 				Save
 				<small>with [command] + [commandOptions]</small>
 			</button>
 		</div>
 	</fieldset> -->
+	<fieldset>
+		<legend>Within Collection</legend>
+		<div class="btn-group" role="group">
+			<button class="btn btn-sm" type="button" [ngClass]="{'btn-success': !isValid$.value, 'btn-danger': isValid$.value}"
+			        (click)="toggleValidity$()">
+				Mark as {{ (isValid$ | async) ? "Invalid" : "Valid" }}
+			</button>
+		</div>
+		<div class="form-group collection">
+			<div *ngFor="let hero of heroes" class="collection-item">
+				<div class="hero">
+					{{hero.name}}
+				</div>
+
+				<div class="action">
+					<button class="btn btn-danger btn-sm" type="button" [command]="{execute: removeHero.bind(this, hero), canExecute: this.isValid$}">
+						X
+					</button>
+				</div>
+			</div>
+		</div>
+	</fieldset>
 </div>

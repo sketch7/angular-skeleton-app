@@ -1,3 +1,4 @@
+import * as _ from "lodash";
 import {
 	Component,
 	ChangeDetectionStrategy,
@@ -6,6 +7,11 @@ import {
 import { BehaviorSubject, timer } from "rxjs";
 import { tap, filter } from "rxjs/operators";
 import { CommandAsync } from "@ssv/ngx.command";
+
+interface Hero {
+	key: string;
+	name: string;
+}
 
 @Component({
 	selector: "app-command",
@@ -25,6 +31,12 @@ export class CommandComponent {
 		this.saveRedux.bind(this),
 		this.isValidRedux$,
 	);
+	heroes: Hero[] = [
+		{ key: "rexxar", name: "Rexxar" },
+		{ key: "Malthael", name: "Malthael" },
+		{ key: "diablo", name: "Diablo" },
+	];
+
 	// saveCmdSync: ICommand = new Command(this.save$.bind(this), this.isValid$, true);
 	// saveCmd: ICommand = new Command(this.save$.bind(this), null, true);
 	private _state = new BehaviorSubject({ isLoading: false });
@@ -50,6 +62,19 @@ export class CommandComponent {
 
 	toggleValidityRedux(): void {
 		this.isValidRedux$.next(!this.isValidRedux$.value);
+	}
+
+	removeHero(hero: Hero) {
+		console.log("removeHero", { hero });
+
+		return timer(2000).pipe(
+			tap(() =>
+				_.remove(this.heroes, {
+					key: hero.key,
+				}),
+			),
+			tap(() => console.warn("removeHero$", "execute complete")),
+		);
 	}
 
 	private save$() {
