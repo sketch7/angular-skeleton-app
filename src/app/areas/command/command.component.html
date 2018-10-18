@@ -62,29 +62,22 @@
 			</div>
 		</div>
 		<div class="button-group">
-			<button class="btn btn-primary" type="button" [disabled]="!saveCmd.canExecute" (click)="saveCmd.execute()">
+			<!-- <button class="btn btn-primary" type="button" [disabled]="!saveCmd.canExecute" (click)="saveCmd.execute()">
 				Save
 				<small>execute</small>
-			</button>
+			</button> -->
 
-			<!-- <button class="btn btn-primary"
-			 type="button"
-			 [command]="saveCmd">
-				<i *ngIf="saveCmd.isExecuting"
-				 class="ai-circled ai-indicator ai-dark-spin small"></i>
+			<button class="btn btn-primary" type="button" [command]="saveCmd">
+				<i *ngIf="saveCmd.isExecuting" class="ai-circled ai-indicator ai-dark-spin small"></i>
 				Save
 				<small>with [command]</small>
 			</button>
 
-			<button class="btn btn-primary"
-			 type="button"
-			 [command]="saveCmd"
-			 [commandOptions]="{executingCssClass: 'is-loading'}">
-				<i *ngIf="saveCmd.isExecuting"
-				 class="ai-circled ai-indicator ai-dark-spin small"></i>
+			<button class="btn btn-primary" type="button" [command]="saveCmd" [commandOptions]="{executingCssClass: 'is-loading'}">
+				<i *ngIf="saveCmd.isExecuting" class="ai-circled ai-indicator ai-dark-spin small"></i>
 				Save
-				<small>with [command] + [commandOptions]</small>
-			</button> -->
+				<small>with [options]</small>
+			</button>
 		</div>
 	</fieldset>
 	<!-- <fieldset>
@@ -137,9 +130,9 @@
 	<fieldset>
 		<legend>Within Collection</legend>
 		<div class="btn-group" role="group">
-			<button class="btn btn-sm" type="button" [ngClass]="{'btn-success': !isValid$.value, 'btn-danger': isValid$.value}"
-			        (click)="toggleValidity$()">
-				Mark as {{ (isValid$ | async) ? "Invalid" : "Valid" }}
+			<button class="btn btn-sm" type="button" [ngClass]="{'btn-success': !isValidHeroRemove$.value, 'btn-danger': isValidHeroRemove$.value}"
+			        (click)="toggleValidityRemoveHero()">
+				Mark as {{ (isValidHeroRemove$ | async) ? "Invalid" : "Valid" }}
 			</button>
 		</div>
 		<div class="form-group collection">
@@ -148,9 +141,29 @@
 					{{hero.name}}
 				</div>
 
-				<div class="action">
-					<button class="btn btn-danger btn-sm" type="button" [command]="{execute: removeHero.bind(this, hero), canExecute: this.isValid$}">
+				<div class="action button-group" #actionCmd="ssvCommandRef" [ssvCommandRef]="{execute: removeHero$, canExecute: isValidHeroRemove$}">
+					<button class="btn btn-danger btn-sm" type="button" [command]="{execute: removeHero$, canExecute: isValidHeroRemove$, params: [hero, 1337, 'xx']}" title="params in object">
 						X
+					</button>
+					<button class="btn btn-info btn-sm" type="button" [command]="{execute: removeHero$, params: hero}"
+					        [commandParams]="[hero, 1336, 'yo']" title="params always takes over + doesnt respect isValid">
+						X
+					</button>
+					<button class="btn btn-light btn-sm" type="button" [command]="{execute: removeHero$, canExecute: isValidHeroRemove$, isAysnc: false}"
+					        [commandParams]="hero" title="params only">
+						X
+					</button>
+					<button class="btn btn-dark btn-sm" type="button" [command]="removeHeroCmd"
+					        [commandParams]="hero" title="shared with other items">
+						X
+					</button>
+					<button class="btn btn-warn btn-sm" type="button" [command]="actionCmd.command"
+					        [commandParams]="hero" title="shared with x2">
+						X2
+					</button>
+					<button class="btn btn-warn btn-sm" type="button" [command]="actionCmd.command"
+					        [commandParams]="[hero, 1333, 'yo']" title="shared with x2">
+						X2
 					</button>
 				</div>
 			</div>

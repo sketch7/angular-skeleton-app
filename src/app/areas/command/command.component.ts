@@ -25,8 +25,10 @@ export class CommandComponent {
 
 	isValid$ = new BehaviorSubject(true);
 	isValidRedux$ = new BehaviorSubject(true);
+	isValidHeroRemove$ = new BehaviorSubject(true);
 
 	saveCmd = new CommandAsync(this.save$.bind(this), this.isValid$);
+	removeHeroCmd = new CommandAsync(this.removeHero$.bind(this), this.isValidHeroRemove$);
 	saveReduxCmd = new CommandAsync(
 		this.saveRedux.bind(this),
 		this.isValidRedux$,
@@ -64,8 +66,12 @@ export class CommandComponent {
 		this.isValidRedux$.next(!this.isValidRedux$.value);
 	}
 
-	removeHero(hero: Hero) {
-		console.log("removeHero", { hero });
+	toggleValidityRemoveHero(): void {
+		this.isValidHeroRemove$.next(!this.isValidHeroRemove$.value);
+	}
+
+	removeHero$(hero: Hero, param2: any, param3: any) {
+		console.log("removeHero", { hero, param2, param3, heroes: this.heroes });
 
 		return timer(2000).pipe(
 			tap(() =>
@@ -73,7 +79,7 @@ export class CommandComponent {
 					key: hero.key,
 				}),
 			),
-			tap(() => console.warn("removeHero$", "execute complete")),
+			tap(() => console.warn("removeHero$", "execute complete", this.heroes)),
 		);
 	}
 
