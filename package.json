@@ -29,7 +29,7 @@
 		"@angular/router": "^6.1.0",
 		"@angular/service-worker": "^6.1.0",
 		"@ssv/core": "^0.3.22",
-		"@ssv/ngx.command": "^1.0.2",
+		"@ssv/ngx.command": "^1.1.0",
 		"@ssv/tools": "^0.6.12",
 		"@types/lodash": "^4.14.117",
 		"bootstrap": "^4.1.3",
