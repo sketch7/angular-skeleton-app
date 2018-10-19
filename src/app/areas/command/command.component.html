@@ -149,7 +149,7 @@
 					        [commandParams]="[hero, 1336, 'yo']" title="params always takes over + doesnt respect isValid">
 						X
 					</button>
-					<button class="btn btn-light btn-sm" type="button" [command]="{execute: removeHero$, canExecute: isValidHeroRemove$, isAysnc: false}"
+					<button class="btn btn-light btn-sm" type="button" [command]="{execute: removeHero$, canExecute: isValidHeroRemove$}"
 					        [commandParams]="hero" title="params only">
 						X
 					</button>
