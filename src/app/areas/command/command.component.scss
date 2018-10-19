@@ -39,6 +39,24 @@ fieldset {
 	}
 }
 
+.collection {
+	margin-top: 0.5em;
+	.collection-item {
+		display: flex;
+		margin-bottom: 0.5em;
+		align-items: center;
+
+		.hero {
+			flex-grow: 1;
+		}
+
+		.action {
+			margin-left: 0.5em;
+			justify-content: flex-end;
+		}
+	}
+}
+
 // default
 .executing {
 	background: $amber;
