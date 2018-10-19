@@ -62,10 +62,10 @@
 			</div>
 		</div>
 		<div class="button-group">
-			<!-- <button class="btn btn-primary" type="button" [disabled]="!saveCmd.canExecute" (click)="saveCmd.execute()">
+			<button class="btn btn-primary" type="button" [disabled]="!saveCmd.canExecute" (click)="saveCmd.execute()">
 				Save
 				<small>execute</small>
-			</button> -->
+			</button>
 
 			<button class="btn btn-primary" type="button" [command]="saveCmd">
 				<i *ngIf="saveCmd.isExecuting" class="ai-circled ai-indicator ai-dark-spin small"></i>
@@ -80,7 +80,7 @@
 			</button>
 		</div>
 	</fieldset>
-	<!-- <fieldset>
+	<fieldset>
 		<legend>Using Command Redux</legend>
 		<div class="btn-group" role="group">
 			<button class="btn btn-sm" type="button" [ngClass]="{'btn-success': !isValidRedux$.value, 'btn-danger': isValidRedux$.value}"
@@ -123,10 +123,10 @@
 			<button class="btn btn-primary" type="button" [command]="saveReduxCmd" [commandOptions]="{executingCssClass: 'is-loading'}">
 				<i *ngIf="saveReduxCmd.isExecuting" class="ai-circled ai-indicator ai-dark-spin small"></i>
 				Save
-				<small>with [command] + [commandOptions]</small>
+				<small>with [options]</small>
 			</button>
 		</div>
-	</fieldset> -->
+	</fieldset>
 	<fieldset>
 		<legend>Within Collection</legend>
 		<div class="btn-group" role="group">
