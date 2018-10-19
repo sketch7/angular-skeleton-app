@@ -15,6 +15,7 @@ import { tap, filter, pairwise, startWith } from "rxjs/operators";
 import { ViewportService, ViewportSizeTypeInfo } from "./viewport.service";
 
 @Directive({
+	// tslint:disable-next-line:directive-selector
 	selector: "[ssvViewportMatcher]",
 })
 export class SsvViewportMatcherDirective implements OnInit, OnDestroy {
@@ -60,7 +61,7 @@ export class SsvViewportMatcherDirective implements OnInit, OnDestroy {
 
 		this.sizeType$$ = this.viewport.sizeType$
 			.pipe(
-				tap(x => console.info("ssvViewportMatcher - sizeType changed x2", x)),
+				tap(x => console.log("ssvViewportMatcher - sizeType changed x2", x)),
 				tap(x => (this.sizeInfo = x)),
 				tap(() => this.update$.next(this._context)),
 			)
@@ -162,6 +163,31 @@ export class SsvViewportMatcherDirective implements OnInit, OnDestroy {
 export class SsvViewportMatcherContext {
 	sizeType: string | string[] | null = null;
 	sizeTypeExclude: string | string[] | null = null;
+}
+
+// function parseExpression(expression: string) {
+// 	// <=small
+
+// 	const comparisonOperationValues = Object.values(ComparisonOperation);
+// 	console.warn("");
+// 	_.startsWith(ComparisonOperation.equals);
+// 	// const exp = expresion.;
+
+// }
+
+
+export interface ViewportSizeExpression {
+	sizeType: string;
+	comparison: ComparisonOperation;
+}
+
+export enum ComparisonOperation {
+	equals = "=",
+	notEquals = "<>",
+	lessThan = "<",
+	lessOrEqualThan = "<=",
+	greaterThan = ">",
+	greaterOrEqualThan = ">=",
 }
 
 function match(
