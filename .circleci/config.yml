@@ -30,7 +30,7 @@ jobs:
           command: npm run build
       - run:
           name: test
-          command: npm test -- --singleRun --code-coverage
+          command: npm test -- --watch=false --code-coverage
       - store_artifacts:
           path: coverage
           prefix: coverage
