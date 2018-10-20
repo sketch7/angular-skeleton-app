@@ -26,7 +26,7 @@ export class ViewportComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.sizeType$$ = this.viewport.sizeType$
 			.pipe(
-				tap(x => console.info("Viewport - sizeType changed", x)),
+				tap(x => console.log("Viewport - sizeType changed", x)),
 				tap(x => this.viewportSize = x),
 				tap(() => this.cdr.markForCheck()),
 			)
