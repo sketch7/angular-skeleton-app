@@ -43,4 +43,4 @@
 
 ### Changes/Refactor
 
- - `SharedModule` exporting via `shared/index`
+- `SharedModule` exporting via `shared/index`
