@@ -39,6 +39,11 @@
 			</ng-template>
 		</div>
 
+		<div *ssvViewportMatcher="['>=', 'xlarge']" class="matcher-dummy-container">
+			Dummy container <strong class="matcher-dummy-container__target">(>= xlarge>)</strong>
+			<small>tuple syntax *recommended*</small>
+		</div>
+
 		<!-- 
 		<div *ssvViewportMatcher ssvViewportMatcherExclude="['large']" class="matcher-dummy-container">
 			Dummy container <strong class="matcher-dummy-container__target">(exclude large)</strong>

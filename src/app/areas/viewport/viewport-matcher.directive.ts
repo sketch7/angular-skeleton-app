@@ -17,7 +17,12 @@ import {
 	ViewportSizeTypeInfo,
 	ViewportSizeType,
 } from "./viewport.service";
-import { ViewportSizeMatcherExpression, isViewportSizeMatcherExpression, COMPARISON_OPERATION_FUNC_MAPPING } from "./viewport.util";
+import {
+	ViewportSizeMatcherExpression,
+	isViewportSizeMatcherExpression,
+	COMPARISON_OPERATION_FUNC_MAPPING,
+	isViewportSizeMatcherTupleExpression
+} from "./viewport.util";
 
 export class SsvViewportMatcherContext {
 	sizeType: string | string[] | null = null;
@@ -121,6 +126,12 @@ export class SsvViewportMatcherDirective implements OnInit, OnDestroy {
 		console.log(">>> ssvViewportMatcher set", value);
 		if (isViewportSizeMatcherExpression(value)) {
 			this._context.expresson = value;
+		} else if (isViewportSizeMatcherTupleExpression(value)) {
+			const [op, size] = value;
+			this._context.expresson = {
+				operation: op,
+				size
+			};
 		} else {
 			this._context.sizeType = value;
 		}

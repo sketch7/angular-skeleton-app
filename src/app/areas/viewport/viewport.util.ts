@@ -5,14 +5,25 @@ export interface ViewportSizeMatcherExpression {
 	operation: ComparisonOperation;
 }
 
-export function isViewportSizeMatcherExpression(
-	arg: any | ViewportSizeMatcherExpression,
-): arg is ViewportSizeMatcherExpression {
+export function isViewportSizeMatcherExpression(arg: any | ViewportSizeMatcherExpression): arg is ViewportSizeMatcherExpression {
 	if (!arg) {
 		return false;
 	}
 	if (arg.size && arg.operation) {
 		return true;
+	}
+	return false;
+}
+
+export function isViewportSizeMatcherTupleExpression(arg: any): arg is [ComparisonOperation, string] {
+	if (!arg) {
+		return false;
+	}
+	if (Array.isArray(arg)) {
+		if (arg.length === 2) {
+			const [op] = arg;
+			return operations.includes(op);
+		}
 	}
 	return false;
 }
@@ -25,6 +36,9 @@ export enum ComparisonOperation {
 	greaterThan = ">",
 	greaterOrEqualThan = ">=",
 }
+
+const operations = Object.values(ComparisonOperation);
+
 
 export const COMPARISON_OPERATION_FUNC_MAPPING: Dictionary<(a: number, b: number) => boolean> = {
 	[ComparisonOperation.equals]: (a: number, b: number) => a === b,
