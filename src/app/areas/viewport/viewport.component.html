@@ -28,6 +28,17 @@
 		<div *ssvViewportMatcher="''; exclude ['xsmall', 'small']" class="matcher-dummy-container">
 			Dummy container <strong class="matcher-dummy-container__target">exclude (xsmall, small)</strong>
 		</div>
+		<div>
+			<div *ssvViewportMatcher="{size: 'xlarge', operation: '<='}; else elseB" class="matcher-dummy-container">
+				Dummy container <strong class="matcher-dummy-container__target">(<= xlarge>)</strong>
+			</div>
+			<ng-template #elseB>
+				<div class="matcher-dummy-container">
+					Dummy container <strong class="matcher-dummy-container__target">(<= xlarge [else]>)</strong>
+				</div>
+			</ng-template>
+		</div>
+
 		<!-- 
 		<div *ssvViewportMatcher ssvViewportMatcherExclude="['large']" class="matcher-dummy-container">
 			Dummy container <strong class="matcher-dummy-container__target">(exclude large)</strong>
