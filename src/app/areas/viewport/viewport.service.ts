@@ -146,21 +146,13 @@ export class ViewportService {
 	private calculateViewportSize(width: number): ViewportSizeTypeInfo {
 		if (_.inRange(width, viewportSizesConfig.xsmall)) {
 			return viewportSizeRefs[ViewportSizeType.xsmall];
-		} else if (
-			_.inRange(width, viewportSizesConfig.xsmall, viewportSizesConfig.small)
-		) {
+		} else if (_.inRange(width, viewportSizesConfig.xsmall, viewportSizesConfig.small)) {
 			return viewportSizeRefs[ViewportSizeType.small];
-		} else if (
-			_.inRange(width, viewportSizesConfig.small, viewportSizesConfig.medium)
-		) {
+		} else if (_.inRange(width, viewportSizesConfig.small, viewportSizesConfig.medium)) {
 			return viewportSizeRefs[ViewportSizeType.medium];
-		} else if (
-			_.inRange(width, viewportSizesConfig.medium, viewportSizesConfig.large)
-		) {
+		} else if (_.inRange(width, viewportSizesConfig.medium, viewportSizesConfig.large)) {
 			return viewportSizeRefs[ViewportSizeType.large];
-		} else if (
-			_.inRange(width, viewportSizesConfig.large, viewportSizesConfig.xlarge)
-		) {
+		} else if (_.inRange(width, viewportSizesConfig.large, viewportSizesConfig.xlarge)) {
 			return viewportSizeRefs[ViewportSizeType.xlarge];
 		} else {
 			return viewportSizeRefs[ViewportSizeType.xxlarge];
