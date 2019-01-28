@@ -7,8 +7,7 @@ import {
 } from "@angular/core";
 import { Subscription } from "rxjs";
 import { tap } from "rxjs/operators";
-
-import { ViewportService, ViewportSizeTypeInfo } from "./viewport.service";
+import { ViewportSizeTypeInfo, ViewportService } from "@ssv/ngx.ux";
 
 @Component({
 	selector: "app-viewport",

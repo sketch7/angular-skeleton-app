@@ -1,4 +1,5 @@
 import * as _ from "lodash";
+import { string, enumUtil, VERSION } from "@ssv/core";
 import {
 	Component,
 	ChangeDetectionStrategy,
@@ -11,6 +12,13 @@ import { CommandAsync } from "@ssv/ngx.command";
 interface Hero {
 	key: string;
 	name: string;
+}
+
+enum Roles {
+	Assassin = 0,
+	Warrior = 1,
+	Specialist = 2,
+	BossFight = 5
 }
 
 @Component({
@@ -43,7 +51,12 @@ export class CommandComponent {
 	// saveCmd: ICommand = new Command(this.save$.bind(this), null, true);
 	private _state = new BehaviorSubject({ isLoading: false });
 
-	constructor(private cdr: ChangeDetectorRef) {}
+	constructor(private cdr: ChangeDetectorRef) {
+		const name = string.interpolate("name=:name", { name: "Chiko" });
+		console.warn(">>> ssvcore  ", name, VERSION);
+		const rolesNames =  enumUtil.getNamesKebab(Roles);
+		console.warn(">>> ssvcore roles", rolesNames);
+	}
 
 	save() {
 		this.isExecuting = true;
