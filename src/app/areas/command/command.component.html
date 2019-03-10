@@ -67,13 +67,13 @@
 				<small>execute</small>
 			</button>
 
-			<button class="btn btn-primary" type="button" [command]="saveCmd">
+			<button class="btn btn-primary" type="button" [ssvCommand]="saveCmd">
 				<i *ngIf="saveCmd.isExecuting" class="ai-circled ai-indicator ai-dark-spin small"></i>
 				Save
-				<small>with [command]</small>
+				<small>with [ssvCommand]</small>
 			</button>
 
-			<button class="btn btn-primary" type="button" [command]="saveCmd" [commandOptions]="{executingCssClass: 'is-loading'}">
+			<button class="btn btn-primary" type="button" [ssvCommand]="saveCmd" [ssvCommandOptions]="{executingCssClass: 'is-loading'}">
 				<i *ngIf="saveCmd.isExecuting" class="ai-circled ai-indicator ai-dark-spin small"></i>
 				Save
 				<small>with [options]</small>
@@ -114,13 +114,13 @@
 				<small>execute</small>
 			</button>
 
-			<button class="btn btn-primary" type="button" [command]="saveReduxCmd">
+			<button class="btn btn-primary" type="button" [ssvCommand]="saveReduxCmd">
 				<i *ngIf="saveReduxCmd.isExecuting" class="ai-circled ai-indicator ai-dark-spin small"></i>
 				Save
-				<small>with [command]</small>
+				<small>with [ssvCommand]</small>
 			</button>
 
-			<button class="btn btn-primary" type="button" [command]="saveReduxCmd" [commandOptions]="{executingCssClass: 'is-loading'}">
+			<button class="btn btn-primary" type="button" [ssvCommand]="saveReduxCmd" [ssvCommandOptions]="{executingCssClass: 'is-loading'}">
 				<i *ngIf="saveReduxCmd.isExecuting" class="ai-circled ai-indicator ai-dark-spin small"></i>
 				Save
 				<small>with [options]</small>
@@ -142,27 +142,27 @@
 				</div>
 
 				<div class="action button-group" #actionCmd="ssvCommandRef" [ssvCommandRef]="{execute: removeHero$, canExecute: isValidHeroRemove$}">
-					<button class="btn btn-danger btn-sm" type="button" [command]="{execute: removeHero$, canExecute: isValidHeroRemove$, params: [hero, 1337, 'xx']}" title="params in object">
+					<button class="btn btn-danger btn-sm" type="button" [ssvCommand]="{execute: removeHero$, canExecute: isValidHeroRemove$, params: [hero, 1337, 'xx']}" title="params in object">
 						X
 					</button>
-					<button class="btn btn-info btn-sm" type="button" [command]="{execute: removeHero$, params: hero}"
-					        [commandParams]="[hero, 1336, 'yo']" title="params always takes over + doesnt respect isValid">
+					<button class="btn btn-info btn-sm" type="button" [ssvCommand]="{execute: removeHero$, params: hero}"
+					        [ssvCommandParams]="[hero, 1336, 'yo']" title="params always takes over + doesnt respect isValid">
 						X
 					</button>
-					<button class="btn btn-light btn-sm" type="button" [command]="{execute: removeHero$, canExecute: isValidHeroRemove$}"
-					        [commandParams]="hero" title="params only">
+					<button class="btn btn-light btn-sm" type="button" [ssvCommand]="{execute: removeHero$, canExecute: isValidHeroRemove$}"
+					        [ssvCommandParams]="hero" title="params only">
 						X
 					</button>
-					<button class="btn btn-dark btn-sm" type="button" [command]="removeHeroCmd"
-					        [commandParams]="hero" title="shared with other items">
+					<button class="btn btn-dark btn-sm" type="button" [ssvCommand]="removeHeroCmd"
+					        [ssvCommandParams]="hero" title="shared with other items">
 						X
 					</button>
-					<button class="btn btn-warn btn-sm" type="button" [command]="actionCmd.command"
-					        [commandParams]="hero" title="shared with x2">
+					<button class="btn btn-warn btn-sm" type="button" [ssvCommand]="actionCmd.command"
+					        [ssvCommandParams]="hero" title="shared with x2">
 						X2
 					</button>
-					<button class="btn btn-warn btn-sm" type="button" [command]="actionCmd.command"
-					        [commandParams]="[hero, 1333, 'yo']" title="shared with x2">
+					<button class="btn btn-warn btn-sm" type="button" [ssvCommand]="actionCmd.command"
+					        [ssvCommandParams]="[hero, 1333, 'yo']" title="shared with x2">
 						X2
 					</button>
 				</div>
