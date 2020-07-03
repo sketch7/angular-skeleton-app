@@ -18,13 +18,19 @@ export function isHtmlLinkElement(
 	return element.tagName.toLowerCase() === "a";
 }
 
+interface LinkItem {
+	title: string;
+	path: string[];
+	activeOptions?: { exact: boolean; }
+}
+
 @Component({
 	selector: "app-nav",
 	templateUrl: "./nav.component.html",
 	styleUrls: ["./nav.component.scss"],
 })
 export class NavComponent implements OnInit, OnDestroy {
-	links = [
+	links: LinkItem[] = [
 		// { path: ["/"], title: "Home", activeOptions: { exact: true } },
 		{ path: ["/projects"], title: "Projects" },
 	];
@@ -35,7 +41,7 @@ export class NavComponent implements OnInit, OnDestroy {
 	isDebug = this.appInfo.isDebug;
 
 	isMenuOpened = false;
-	@ViewChild("menu") menuElementRef: ElementRef | undefined;
+	@ViewChild("menu", { static: true }) menuElementRef: ElementRef | undefined;
 
 	private domClickListener$$!: () => void;
 
@@ -45,7 +51,7 @@ export class NavComponent implements OnInit, OnDestroy {
 		private document: any,
 		private appInfo: AppInfoService,
 		private renderer: Renderer2,
-	) {}
+	) { }
 
 	ngOnInit(): void {
 		this.domClickListener$$ = this.renderer.listen(

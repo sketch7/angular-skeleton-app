@@ -1,8 +1,8 @@
 # Angular Skeleton App
-Angular 7.x navigation skeleton project with styling which get you started faster.
+Angular 10.x navigation skeleton project with styling which get you started faster.
 
 ## What does it have?
- - Angular CLI 7.0 template
+ - Angular CLI 10.x template
  - SCSS for styling
  - Font Awesome and Bootstrap 4.x (no javascript, just styles)
  - Navigation/layout
@@ -29,7 +29,7 @@ Run `npm run start:prod` build and run for production.
 
 # Angular CLI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.2.
 
 ## Development server
 
@@ -41,7 +41,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
 
