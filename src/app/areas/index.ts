@@ -14,4 +14,13 @@ export const AREAS_ROUTES: Routes = [
 	{ path: "**", component: NotFoundComponent },
 ];
 
-export const AREAS_COMPONENTS = [HomeComponent, ProjectsComponent, ProjectComponent, NavComponent, ErrorComponent, NotFoundComponent];
+export const AREAS_COMPONENTS = [
+	NavComponent,
+
+	// pages
+	HomeComponent,
+	ErrorComponent,
+	NotFoundComponent,
+	ProjectsComponent,
+	ProjectComponent,
+];
