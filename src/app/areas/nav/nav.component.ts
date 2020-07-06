@@ -21,7 +21,7 @@ export function isHtmlLinkElement(
 interface LinkItem {
 	title: string;
 	path: string[];
-	activeOptions?: { exact: boolean; }
+	activeOptions?: { exact: boolean; };
 }
 
 @Component({
