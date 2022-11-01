@@ -12,7 +12,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "serve:prod": "cd ./dist/angular-skeleton-app && http-server",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "analyze": "npm run build:prod  -- --stats-json && npm run analyze:only",
+    "analyze:only": "npx webpack-bundle-analyzer ./angular-skeleton-app/dist/stats.json"
   },
   "private": true,
   "dependencies": {
