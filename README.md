@@ -1,13 +1,13 @@
 # Angular Skeleton App
-Angular 10.x navigation skeleton project with styling which get you started faster.
+Angular 14.x navigation skeleton project with styling which get you started faster.
 
 ## What does it have?
- - Angular CLI 10.x template
+ - Angular CLI 14.x template
  - SCSS for styling
  - Font Awesome and Bootstrap 4.x (no javascript, just styles)
  - Navigation/layout
  - Theming
- - Linting/formatting - prettier, tslint, eslint, stylelint
+ - Linting/formatting - prettier, eslint, stylelint
  - Circle CI 2 integration
 
  ![Angular Skeleton App](./screenshot.jpg)
