@@ -7,6 +7,8 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { AREAS_COMPONENTS } from "./areas/index";
 import { AppSharedModule } from "./shared";
+import { ServiceWorkerModule } from "@angular/service-worker";
+import { environment } from "../environments/environment";
 
 @NgModule({
 	declarations: [
@@ -18,12 +20,16 @@ import { AppSharedModule } from "./shared";
 		BrowserModule.withServerTransition({ appId: "serverApp" }),
 		FormsModule,
 		HttpClientModule,
-		// ServiceWorkerModule.register("/ngsw-worker.js", { enabled: environment.production }),
-		// BrowserTransferStateModule,
+		ServiceWorkerModule.register("ngsw-worker.js", {
+			enabled: environment.production,
+			// Register the ServiceWorker as soon as the application is stable
+			// or after 30 seconds (whichever comes first).
+			registrationStrategy: "registerWhenStable:30000"
+		}),
 
 		// app
 		AppSharedModule,
-		AppRoutingModule
+		AppRoutingModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]
