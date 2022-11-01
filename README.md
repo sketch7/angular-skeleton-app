@@ -2,13 +2,13 @@
 Angular 14.x navigation skeleton project with styling which get you started faster.
 
 ## What does it have?
- - Angular CLI 14.x template
- - SCSS for styling
- - Font Awesome and Bootstrap 4.x (no javascript, just styles)
- - Navigation/layout
- - Theming
- - Linting/formatting - prettier, eslint, stylelint
- - Circle CI 2 integration
+  - Angular CLI 14.x template
+  - SCSS for styling
+  - Font Awesome and Bootstrap 4.x (no javascript, just styles)
+  - Navigation/layout
+  - Theming
+  - Linting/formatting - prettier, eslint, stylelint
+  - Circle CI 2 integration
 
  ![Angular Skeleton App](./screenshot.jpg)
 
@@ -16,10 +16,10 @@ Angular 14.x navigation skeleton project with styling which get you started fast
   - docker image
 
 ## regenerate
-- `ng new angular-skeleton-app --routing --style=scss`
-- `ng lint` (to setup)
-- `ng add @angular/pwa`
-- `ng add @nguniversal/express-engine` - https://angular.io/guide/universal
+  - `ng new angular-skeleton-app --routing --style=scss`
+  - `ng lint` (to setup)
+  - `ng add @angular/pwa`
+  - `ng add @nguniversal/express-engine` - https://angular.io/guide/universal
 
 See https://ng-add.web.app/ for more
 
