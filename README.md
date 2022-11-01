@@ -25,6 +25,8 @@ See https://ng-add.web.app/ for more
 
 # Getting Started
 
+- Node version compat list https://stackoverflow.com/questions/60248452/is-there-a-compatibility-list-for-angular-angular-cli-and-node-js
+
 ## Start developing
 
 Run `npm start` to start developing.
