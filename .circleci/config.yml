@@ -1,5 +1,6 @@
 version: 2.1
 orbs:
+  # https://circleci.com/developer/orbs/orb/circleci/browser-tools
   browser-tools: circleci/browser-tools@1.4.0
 jobs:
   build:
@@ -8,7 +9,8 @@ jobs:
       # https://circleci.com/developer/images/image/cimg/node
       - image: cimg/node:14.15.5-browsers
     steps:
-      - browser-tools/install-browser-tools
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
       - checkout
       - run:
           name: Print environment versions
