@@ -8,7 +8,9 @@ import { AppInfoService } from "../../shared";
 	styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent {
+
 	title = this.appInfo.title;
 
-	constructor(private appInfo: AppInfoService) {}
+	constructor(private appInfo: AppInfoService) { }
+
 }

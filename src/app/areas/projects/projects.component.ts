@@ -7,6 +7,7 @@ import { Project } from "./projects.model";
 	styleUrls: ["./projects.component.scss"],
 })
 export class ProjectsComponent {
+
 	projects: Project[] = [
 		// js
 		{
@@ -73,4 +74,5 @@ export class ProjectsComponent {
 			description: "Http Client for .NET Standard with fluent APIs which are intuitive, easy to use and also highly extensible.",
 		},
 	];
+
 }

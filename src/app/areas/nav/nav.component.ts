@@ -21,7 +21,7 @@ export function isHtmlLinkElement(
 interface LinkItem {
 	title: string;
 	path: string[];
-	activeOptions?: { exact: boolean; };
+	activeOptions?: { exact: boolean };
 }
 
 @Component({
@@ -30,6 +30,7 @@ interface LinkItem {
 	styleUrls: ["./nav.component.scss"],
 })
 export class NavComponent implements OnInit, OnDestroy {
+
 	links: LinkItem[] = [
 		// { path: ["/"], title: "Home", activeOptions: { exact: true } },
 		{ path: ["/projects"], title: "Projects" },
@@ -81,4 +82,5 @@ export class NavComponent implements OnInit, OnDestroy {
 		}
 		this.isMenuOpened = false;
 	}
+
 }

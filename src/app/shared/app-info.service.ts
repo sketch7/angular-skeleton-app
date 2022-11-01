@@ -6,8 +6,10 @@ import { environment } from "../../environments/environment";
 	providedIn: "root"
 })
 export class AppInfoService {
+
 	title = "Angular Skeleton App";
 	version = "1.0.0";
 	environment = environment.production ? "prod" : "dev";
 	isDebug = environment.debug;
+
 }
