@@ -8,5 +8,7 @@ import { Project } from "./projects.model";
 	styleUrls: ["./project.component.scss"],
 })
 export class ProjectComponent {
+
 	@Input() project: Project | undefined;
+
 }

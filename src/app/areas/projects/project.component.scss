@@ -1,5 +1,5 @@
-@import "mixins";
-@import "vars";
+@import "@app/mixins";
+@import "@app/vars";
 
 $project-bg-color: rgba($black, 0.4) !default;
 $project-text-color: $concrete !default;

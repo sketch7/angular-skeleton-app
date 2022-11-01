@@ -1,18 +1,24 @@
-version: 2
+version: 2.1
+orbs:
+  # https://circleci.com/developer/orbs/orb/circleci/browser-tools
+  browser-tools: circleci/browser-tools@1.4.0
 jobs:
   build:
     working_directory: ~/app
     docker:
-      - image: circleci/node:14.5-browsers
-    environment:
-      - CHROME_BIN: "/usr/bin/google-chrome"
+      # https://circleci.com/developer/images/image/cimg/node
+      - image: cimg/node:14.15.5-browsers
     steps:
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
+      - checkout
       - run:
           name: Print environment versions
           command: |
             NPM_V=$(npm -v)
             echo npm version':' $NPM_V
-      - checkout
+            node --version
+            google-chrome --version
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
