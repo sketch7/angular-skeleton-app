@@ -13,13 +13,13 @@ Angular 14.x navigation skeleton project with styling which get you started fast
  ![Angular Skeleton App](./screenshot.jpg)
 
  ## todo
-  - SSR server
   - docker image
 
 ## regenerate
 - `ng new angular-skeleton-app --routing --style=scss`
 - `ng lint` (to setup)
 - `ng add @angular/pwa`
+- `ng add @nguniversal/express-engine` - https://angular.io/guide/universal
 
 See https://ng-add.web.app/ for more
 
