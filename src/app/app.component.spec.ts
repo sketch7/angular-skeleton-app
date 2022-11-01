@@ -30,6 +30,8 @@ describe("AppComponent", () => {
 		const fixture = TestBed.createComponent(AppComponent);
 		fixture.detectChanges();
 		const compiled = fixture.nativeElement as HTMLElement;
-		expect(compiled.querySelector(".content span")?.textContent).toContain("angular-skeleton-app14 app is running!");
+		expect(compiled.querySelector(".app__author")?.textContent).toContain(
+			"Made with",
+		);
 	});
 });
