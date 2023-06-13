@@ -1,8 +1,8 @@
 # Angular Skeleton App
-Angular 14.x navigation skeleton project with styling which get you started faster.
+Angular 16.x navigation skeleton project with styling which get you started faster.
 
 ## What does it have?
-  - Angular CLI 14.x template
+  - Angular CLI 16.x template
   - SCSS for styling
   - Font Awesome and Bootstrap 4.x (no javascript, just styles)
   - Navigation/layout
@@ -20,6 +20,7 @@ Angular 14.x navigation skeleton project with styling which get you started fast
   - `ng lint` (to setup)
   - `ng add @angular/pwa`
   - `ng add @nguniversal/express-engine` - https://angular.io/guide/universal
+  - `npm run lint -- --fix`
 
 See https://ng-add.web.app/ for more
 
@@ -38,7 +39,7 @@ Run `npm run start:prod` build and run for production.
 
 # Angular CLI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.7.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
 
 ## Development server
 
