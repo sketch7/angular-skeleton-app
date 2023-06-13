@@ -1,14 +1,13 @@
-import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { NgModule, isDevMode } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
+import { ServiceWorkerModule } from "@angular/service-worker";
 import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from "@angular/forms";
 
+import { AREAS_COMPONENTS } from "./areas/index";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { AREAS_COMPONENTS } from "./areas/index";
 import { AppSharedModule } from "./shared";
-import { ServiceWorkerModule } from "@angular/service-worker";
-import { environment } from "../environments/environment";
 
 @NgModule({
 	declarations: [
@@ -17,11 +16,11 @@ import { environment } from "../environments/environment";
 	],
 	imports: [
 		// vendors
-		BrowserModule.withServerTransition({ appId: "serverApp" }),
+		BrowserModule,
 		FormsModule,
 		HttpClientModule,
 		ServiceWorkerModule.register("ngsw-worker.js", {
-			enabled: environment.production,
+			enabled: !isDevMode(),
 			// Register the ServiceWorker as soon as the application is stable
 			// or after 30 seconds (whichever comes first).
 			registrationStrategy: "registerWhenStable:30000"

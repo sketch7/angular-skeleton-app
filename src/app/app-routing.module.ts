@@ -1,11 +1,16 @@
 import { NgModule } from "@angular/core";
-import { RouterModule } from "@angular/router";
+import { RouterModule, Routes } from "@angular/router";
+
 import { AREAS_ROUTES } from "./areas/index";
 
+const routes: Routes = [
+	...AREAS_ROUTES
+];
+
 @NgModule({
-	imports: [RouterModule.forRoot(AREAS_ROUTES, {
+	imports: [RouterModule.forRoot(routes, {
 		initialNavigation: "enabledBlocking"
 	})],
-	exports: [RouterModule],
+	exports: [RouterModule]
 })
 export class AppRoutingModule { }
